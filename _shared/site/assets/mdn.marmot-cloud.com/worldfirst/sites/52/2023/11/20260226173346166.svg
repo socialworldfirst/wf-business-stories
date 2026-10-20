@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210" height="210" fill="none">
+  <g clip-path="url(#-_PLN__a)">
+    <rect width="210" height="210" rx="105" fill="#01411C"></rect>
+    <mask id="-_PLN__b" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-30" y="0" width="270" height="210">
+      <path d="M240 0H-30v210h270V0Z" fill="#fff"></path>
+    </mask>
+    <g mask="url(#-_PLN__b)">
+      <path d="M-36.21-2.89h337.87v225.249H-36.21V-2.891Z" fill="#EE1C25"></path>
+      <path d="M-36.21-2.89h337.87v108.029H-36.21V-2.891Z" fill="#fff"></path>
+    </g>
+  </g>
+  <defs>
+    <clipPath id="-_PLN__a">
+      <rect width="210" height="210" rx="105" fill="#fff"></rect>
+    </clipPath>
+  </defs>
+</svg>
