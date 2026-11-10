@@ -419,6 +419,20 @@ font-size: 14px !important;
 .wfbs-libp__ld::before{content:"";width:28px;height:28px;border-radius:50%;border:3px solid #F2F3F5;border-top-color:#FF0051;animation:wfbsspin .8s linear infinite;margin-bottom:56px;grid-area:1/1}
 .wfbs-libp__ld.done{display:none}
 @keyframes wfbsspin{to{transform:rotate(360deg)}}
+.wfbs-im{position:fixed;inset:0;z-index:10003;font-family:Poppins,sans-serif}
+.wfbs-im[hidden]{display:none}
+.wfbs-im__bg{position:absolute;inset:0;background:rgba(31,35,35,.5)}
+.wfbs-im__box{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,calc(100vw - 32px));background:#fff;border-radius:16px;padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px}
+.wfbs-im__hd{display:flex;align-items:center;font-size:16px;color:#1F2323}
+.wfbs-im .wfbs-im__x{all:unset;margin-left:auto;cursor:pointer;font-size:28px;line-height:1;color:#69727D}
+.wfbs-im__f{font-size:12px;color:#69727D;word-break:break-all;margin:0}
+.wfbs-im .wfbs-im__rm,.wfbs-im .wfbs-im__nt{all:unset;cursor:pointer;text-align:center;font-size:14px;font-weight:600;border-radius:999px;padding:10px 16px}
+.wfbs-im .wfbs-im__rm{background:#FF0051;color:#fff}
+.wfbs-im .wfbs-im__nt{border:1.5px solid #FF0051;color:#FF0051}
+.wfbs-im__l{font-size:13px;font-weight:600;color:#1F2323;margin-top:6px}
+.wfbs-im textarea{font:14px Poppins,sans-serif;border:1.5px solid #E6E8EB;border-radius:10px;padding:10px;resize:vertical}
+.wfbs-im textarea:focus{outline:none;border-color:#FF0051}
+.wfbs-im__ok{font-size:12.5px;color:#137333;min-height:16px;margin:0}
 @media(max-width:767px){.wfbs-film__icon{width:60px;height:60px}.wfbs-lib{right:100px;bottom:51px;height:44px;font-size:14px;padding:0 12px 0 9px;gap:8px}.wfbs-libp__bar{padding-left:16px}}
 </style></head>
 <body class="wp-singular page-template-default page page-id-60761 wp-custom-logo wp-theme-hello-elementor wp-child-theme-wfrow-child elementor-default elementor-kit-5 elementor-page elementor-page-60761 e--ua-blink e--ua-mac e--ua-webkit" data-elementor-device-mode="desktop"><div class="go3670563033" id="hs-web-interactives-top-push-anchor"></div>
@@ -3162,7 +3176,7 @@ font-size: 14px !important;
 <div class="go2417249464 go3967842156" id="hs-web-interactives-floating-bottom-right-anchor">
 </div>
 </div>
-<div id="across_adn_container" style="display:none"><div id="across_adn3_wrap_80498186595" style="display:none"></div></div><script id="wfbs-mirror-sticky">(function(){var c=document.querySelectorAll('[data-settings*=sticky_parent]');if(!c.length)return;var mq=matchMedia('(min-width:1025px)');function f(){c.forEach(function(e){var t=e.parentElement.getBoundingClientRect().top;e.classList.toggle('wfbs-stuck',mq.matches&&t<0)})}addEventListener('scroll',f,{passive:true});addEventListener('resize',f);f()})();</script><a aria-haspopup="dialog" class="wfbs-lib" data-id="wfbs-library" href="library/index.html"><span aria-hidden="true" class="wfbs-lib__ic"><svg height="14" viewbox="0 0 16 16" width="14"><rect fill="#fff" height="6" rx="1.5" width="6" x="1" y="1"></rect><rect fill="#fff" height="6" rx="1.5" width="6" x="9" y="1"></rect><rect fill="#fff" height="6" rx="1.5" width="6" x="1" y="9"></rect><rect fill="#fff" height="6" rx="1.5" width="6" x="9" y="9"></rect></svg></span><span class="wfbs-lib__t">Visual library</span><span class="wfbs-lib__n">37</span></a><div class="wfbs-libp" data-id="wfbs-library" hidden=""><div class="wfbs-libp__bg"></div><div aria-label="Oz Hair and Beauty visual library" aria-modal="true" class="wfbs-libp__sh" role="dialog"><div class="wfbs-libp__bar"><span>Oz Hair and Beauty visual library</span><a href="library/index.html" rel="noopener" target="_blank">Open in a new tab</a><button aria-label="Close the visual library" type="button">×</button></div><div class="wfbs-libp__ld" role="status">Loading the visual library</div><iframe title="Oz Hair and Beauty visual library"></iframe></div></div><script>(function(){
+<div id="across_adn_container" style="display:none"><div id="across_adn3_wrap_80498186595" style="display:none"></div></div><script id="wfbs-mirror-sticky">(function(){var c=document.querySelectorAll('[data-settings*=sticky_parent]');if(!c.length)return;var mq=matchMedia('(min-width:1025px)');function f(){c.forEach(function(e){var t=e.parentElement.getBoundingClientRect().top;e.classList.toggle('wfbs-stuck',mq.matches&&t<0)})}addEventListener('scroll',f,{passive:true});addEventListener('resize',f);f()})();</script><a aria-haspopup="dialog" class="wfbs-lib" data-id="wfbs-library" href="library/index.html"><span aria-hidden="true" class="wfbs-lib__ic"><svg height="14" viewbox="0 0 16 16" width="14"><rect fill="#fff" height="6" rx="1.5" width="6" x="1" y="1"></rect><rect fill="#fff" height="6" rx="1.5" width="6" x="9" y="1"></rect><rect fill="#fff" height="6" rx="1.5" width="6" x="1" y="9"></rect><rect fill="#fff" height="6" rx="1.5" width="6" x="9" y="9"></rect></svg></span><span class="wfbs-lib__t">Visual library</span><span class="wfbs-lib__n">55</span></a><div class="wfbs-libp" data-id="wfbs-library" hidden=""><div class="wfbs-libp__bg"></div><div aria-label="Oz Hair and Beauty visual library" aria-modal="true" class="wfbs-libp__sh" role="dialog"><div class="wfbs-libp__bar"><span>Oz Hair and Beauty visual library</span><a href="library/index.html" rel="noopener" target="_blank">Open in a new tab</a><button aria-label="Close the visual library" type="button">×</button></div><div class="wfbs-libp__ld" role="status">Loading the visual library</div><iframe title="Oz Hair and Beauty visual library"></iframe></div></div><div class="wfbs-im" data-slug="oz-hair-and-beauty" hidden=""><div class="wfbs-im__bg"></div><div aria-label="Image feedback" aria-modal="true" class="wfbs-im__box" role="dialog"><div class="wfbs-im__hd"><b>This image</b><button aria-label="Close" class="wfbs-im__x" type="button">×</button></div><p class="wfbs-im__f"></p><button class="wfbs-im__rm" type="button">Remove this image</button><label class="wfbs-im__l" for="wfbs-im-note">Or add a note</label><textarea id="wfbs-im-note" placeholder="e.g. too dark, crop tighter on the founders, swap for a warehouse photo" rows="3"></textarea><button class="wfbs-im__nt" type="button">Copy note prompt</button><p aria-live="polite" class="wfbs-im__ok"></p></div></div><script>(function(){
   document.querySelectorAll('.wfbs-film__play').forEach(function(b){b.addEventListener('click',function(){
     if(b.dataset.video){var v=document.createElement('video');v.src=b.dataset.video;v.controls=true;v.autoplay=true;v.playsInline=true;
       v.setAttribute('aria-label',b.getAttribute('aria-label'));b.replaceWith(v);return;}
@@ -3170,6 +3184,25 @@ font-size: 14px !important;
     f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?autoplay=1&rel=0&playsinline=1&modestbranding=1';
     f.title=b.getAttribute('aria-label');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;
     b.replaceWith(f);});});
+  (function(){var m=document.querySelector('.wfbs-im');if(!m)return;
+    var f=m.querySelector('.wfbs-im__f'),ok=m.querySelector('.wfbs-im__ok'),ta=m.querySelector('textarea'),cur=null,last=null;
+    function shut(){m.hidden=true;if(last)last.focus();}
+    function copy(t,msg){function done(){ok.textContent=msg;}
+      if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,function(){fb(t);done();});}else{fb(t);done();}}
+    function fb(t){var x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');}catch(e){}x.remove();}
+    function head(){return '/wf_business_story '+m.dataset.slug+'\n';}
+    function tail(){return '\nAct on it, rebuild, run the checks and ship. Do not ask me in between.';}
+    document.querySelectorAll('img[data-wfbs-img]').forEach(function(im){im.style.cursor='pointer';im.title='Click to remove this image or add a note';
+      im.addEventListener('click',function(ev){ev.preventDefault();cur=im;last=document.activeElement;
+        f.textContent=im.dataset.wfbsImg.replace(/_/g,' ')+' · '+im.dataset.wfbsSrc;ta.value='';ok.textContent='';m.hidden=false;ta.focus();});});
+    m.querySelector('.wfbs-im__x').addEventListener('click',shut);m.querySelector('.wfbs-im__bg').addEventListener('click',shut);
+    document.addEventListener('keydown',function(ev){if(!m.hidden&&ev.key==='Escape')shut();});
+    m.querySelector('.wfbs-im__rm').addEventListener('click',function(){
+      copy(head()+'Remove the '+cur.dataset.wfbsImg.replace(/_/g,' ')+' image ('+cur.dataset.wfbsSrc+') from the page.'+tail(),'Prompt copied: paste it to Claude');});
+    m.querySelector('.wfbs-im__nt').addEventListener('click',function(){
+      if(!ta.value.trim()){ok.textContent='Write a note first';ta.focus();return;}
+      copy(head()+'About the '+cur.dataset.wfbsImg.replace(/_/g,' ')+' image ('+cur.dataset.wfbsSrc+'): '+ta.value.trim()+tail(),'Prompt copied: paste it to Claude');});
+  })();
   var a=document.querySelector('.wfbs-lib'),p=document.querySelector('.wfbs-libp');
   if(!a||!p)return;
   var fr=p.querySelector('iframe'),x=p.querySelector('.wfbs-libp__bar button'),last=null;
