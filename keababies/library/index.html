@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>KeaBabies visual library · WorldFirst</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+/* Elevation: none. Nothing on this page casts a shadow. Separation is fill
+   (#f7f5f7) or hairline (1px #e6e8eb), never elevation. Do not remove. */
+*{box-shadow:none!important}
+body{font-family:'Poppins',sans-serif;background:#fff;color:#1f2323;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.rose{color:#ff0051}
+
+.wrap{display:grid;grid-template-columns:216px 1fr;gap:60px;max-width:1180px;margin:0 auto;padding:0 40px 120px}
+nav.side{position:sticky;top:0;align-self:start;height:100vh;padding-top:54px}
+nav.side .nt{font-size:11.5px;font-weight:600;color:#9aa1a1;letter-spacing:.09em;text-transform:uppercase;margin-bottom:18px}
+nav.side a{display:flex;gap:11px;font-size:13.5px;color:#69727d;padding:7px 0;line-height:1.4}
+nav.side a .n{color:#c3c8cc;font-size:12px;font-variant-numeric:tabular-nums;padding-top:1px}
+nav.side a:hover{color:#1f2323}
+nav.side a.on{color:#ff0051;font-weight:500}
+nav.side a.on .n{color:#ff0051}
+nav.side img.logo{height:17px;margin-bottom:30px;display:block}
+
+.hd{padding:54px 0 10px}
+.hd .ey{font-size:12.5px;font-weight:600;color:#ff0051;letter-spacing:.07em;margin-bottom:16px}
+.hd h1{font-size:clamp(34px,4.4vw,52px);font-weight:600;letter-spacing:-1.4px;line-height:1.08;margin-bottom:20px}
+.hd .sub{font-size:17px;color:#5b626a;line-height:1.66;max-width:720px}
+.hd .meta{margin-top:22px;font-size:13px;color:#9aa1a1;padding-top:20px;border-top:1px solid #eef0f2}
+
+section{padding:52px 0;border-top:1px solid #eef0f2}
+section:first-of-type{border-top:none}
+.sn{font-size:12.5px;font-weight:600;color:#ff0051;letter-spacing:.08em;margin-bottom:13px}
+h2{font-size:clamp(24px,2.7vw,33px);font-weight:600;letter-spacing:-.7px;line-height:1.16;margin-bottom:16px}
+p.lead{font-size:15.5px;color:#5b626a;line-height:1.68;max-width:760px}
+.note{margin-top:26px;font-size:13.5px;color:#69727d;line-height:1.65;border-left:2px solid #ff0051;padding-left:16px;max-width:760px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.pane{border:1px solid #e6e8eb;border-radius:16px;padding:24px 26px;box-shadow:none}
+.pane h4{font-size:12.5px;font-weight:600;color:#ff0051;letter-spacing:.06em;text-transform:uppercase;margin-bottom:13px}
+.pane .pp{font-size:14px;color:#5b626a;line-height:1.62;margin-bottom:15px}
+
+.cards{display:grid;gap:18px;margin-top:28px}
+.cards.c2{grid-template-columns:repeat(2,1fr)}
+.card{background:#f7f5f7;border-radius:16px;padding:26px 24px;border:none;box-shadow:none}
+.card .cn{font-size:12px;font-weight:600;color:#ff0051;letter-spacing:.06em;margin-bottom:10px}
+.card h3{font-size:18px;font-weight:600;letter-spacing:-.3px;margin-bottom:13px}
+
+ul.li{list-style:none}
+ul.li li{position:relative;padding-left:26px;font-size:13.8px;color:#3a3f44;margin-bottom:9px;line-height:1.55}
+ul.li li:last-child{margin-bottom:0}
+ul.li li::before{content:"";position:absolute;left:0;top:3px;width:16px;height:16px;border-radius:50%;background:#ff0051}
+ul.li li::after{content:"";position:absolute;left:4.6px;top:6px;width:4px;height:7.5px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(43deg)}
+
+.rows{margin-top:28px;border-top:1px solid #e6e8eb}
+.rows .row{display:grid;grid-template-columns:190px 1fr;gap:26px;padding:16px 0;border-bottom:1px solid #e6e8eb;align-items:start}
+.rows.tight .row{padding:13px 0}
+.rows .rl{font-size:14px;font-weight:600}
+.rows .rl b{color:#ff0051;font-weight:600;margin-right:5px}
+.rows .rv{font-size:14.5px;color:#5b626a;line-height:1.6}
+
+.tbl{margin-top:28px;border-top:1px solid #e6e8eb}
+.tr{display:grid;grid-template-columns:190px 80px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid #e6e8eb;align-items:start}
+.tr span:first-child{font-size:14px;font-weight:600}
+.tr span:last-child{font-size:14px;color:#5b626a;line-height:1.58}
+.tr.th span{font-size:11.5px;font-weight:600;color:#9aa1a1;letter-spacing:.07em;text-transform:uppercase}
+.fx{font-size:13px;color:#9aa1a1;font-weight:500}
+.tl{font-size:13px;color:#ff0051;font-weight:600}
+
+.copyblock{margin-top:26px;border:1px solid #e6e8eb;border-radius:14px;overflow:hidden;max-width:760px}
+.cbh{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid #eef0f2}
+.cbh span{font-size:12.5px;font-weight:600;color:#69727d}
+.cpy{font-family:'Poppins';font-size:12.5px;font-weight:500;color:#ff0051;background:#fff;border:1.5px solid #ff0051;border-radius:999px;padding:5px 15px;cursor:pointer}
+.cpy:hover{background:#ff0051;color:#fff}
+pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;padding:18px;white-space:pre-wrap}
+
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.links a{border:1.5px solid #ff0051;color:#ff0051;border-radius:999px;padding:10px 22px;font-size:14px;font-weight:500}
+.links a:hover{background:#ff0051;color:#fff}
+
+.lockw{max-width:1180px;margin:0 auto;padding:0 40px 50px;font-size:12px;color:#c3c8cc}
+.lockw a{border-bottom:1px solid #e6e8eb}
+
+@media(max-width:940px){
+ .wrap{grid-template-columns:1fr;gap:0;padding:0 24px 90px}
+ nav.side{display:none}
+ .two,.cards.c2{grid-template-columns:1fr}
+ .rows .row,.tr{grid-template-columns:1fr;gap:5px}
+ .tr span:last-child{margin-top:2px}
+}
+
+
+.grid{display:grid;gap:18px;margin-top:26px}
+.grid.g2{grid-template-columns:repeat(2,1fr)}
+.grid.g3{grid-template-columns:repeat(3,1fr)}
+.fr{background:#f7f5f7;border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.fr[hidden]{display:none}
+.fr .th{all:unset;cursor:zoom-in;display:block;background:#1f2323;aspect-ratio:16/9;overflow:hidden}
+.fr .th img{width:100%;height:100%;object-fit:contain;display:block}
+.fr .th.tall{aspect-ratio:4/5}
+.fr .th:focus-visible{outline:2px solid #ff0051;outline-offset:-2px}
+.fr figcaption{padding:14px 16px 16px;display:flex;flex-direction:column;gap:9px;flex:1}
+.ft{display:flex;gap:10px;align-items:center;font-size:12px;color:#9aa1a1}
+.ft .tc{color:#ff0051;font-weight:600;font-variant-numeric:tabular-nums}
+.ft .ct{font-weight:600;color:#69727d;text-transform:uppercase;letter-spacing:.06em;font-size:11px}
+.ft .px{margin-left:auto;font-variant-numeric:tabular-nums}
+.cap{font-size:13.5px;color:#3a3f44;line-height:1.5}
+.big .cap{font-size:14.5px}
+.us,.fls{display:flex;flex-wrap:wrap;gap:6px}
+.u{font-size:11.5px;color:#ff0051;border:1px solid #ffb3c8;border-radius:999px;padding:2px 9px;background:#fff}
+.fl{font-size:11.5px;color:#5b626a;background:#e9ebee;border-radius:999px;padding:2px 9px}
+.ac{display:flex;gap:8px;margin-top:auto;padding-top:4px}
+.ac a,.ac button{all:unset;cursor:pointer;font-size:12.5px;font-weight:500;color:#ff0051;border:1.5px solid #ff0051;border-radius:999px;padding:4px 13px}
+.ac a:hover,.ac button:hover{background:#ff0051;color:#fff}
+.ac a:focus-visible,.ac button:focus-visible{outline:2px solid #1f2323;outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chips+.chips{margin-top:10px}
+.chip{all:unset;cursor:pointer;font-size:13px;color:#5b626a;border:1px solid #e6e8eb;border-radius:999px;padding:6px 14px}
+.chip i{font-style:normal;color:#9aa1a1;margin-left:3px;font-variant-numeric:tabular-nums}
+.chip.on{background:#1f2323;border-color:#1f2323;color:#fff}
+.chip.on i{color:#c3c8cc}
+.chip:focus-visible{outline:2px solid #ff0051;outline-offset:2px}
+.cnt{font-size:13px;color:#9aa1a1;margin-top:16px}
+.filmrow{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px;margin-top:28px;align-items:start}
+.filmrow .rows{margin-top:0}
+.filmrow .rows .row{grid-template-columns:120px 1fr}
+.film{border-radius:12px;overflow:hidden;background:#000;aspect-ratio:16/9;width:100%}
+.film.portrait{aspect-ratio:9/16;max-width:320px}
+.film .play{all:unset;cursor:pointer;display:block;width:100%;height:100%;position:relative}
+.film .play img{width:100%;height:100%;object-fit:cover;display:block}
+.film .pi{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:#ff0051;display:grid;place-items:center}
+.film .play:focus-visible{outline:3px solid #ff0051;outline-offset:3px}
+.film iframe{width:100%;height:100%;border:0;display:block}
+.audit{margin-top:24px;max-width:780px;font-size:14.5px;color:#3a3f44;line-height:1.68}
+.audit h1,.audit h2{font-size:20px;font-weight:600;letter-spacing:-.3px;margin:30px 0 10px;color:#1f2323}
+.audit h3{font-size:16px;font-weight:600;margin:22px 0 8px;color:#1f2323}
+.audit p{margin:0 0 12px}
+.audit ul,.audit ol{margin:0 0 14px 20px}
+.audit li{margin-bottom:6px}
+.audit table{border-collapse:collapse;width:100%;margin:12px 0 18px;font-size:13.5px}
+.audit th,.audit td{border-bottom:1px solid #e6e8eb;padding:8px 10px 8px 0;text-align:left;vertical-align:top}
+.audit th{font-size:11.5px;font-weight:600;color:#9aa1a1;letter-spacing:.07em;text-transform:uppercase}
+.audit code{font-family:inherit;background:#f7f5f7;border-radius:4px;padding:0 4px}
+.audit blockquote{border-left:2px solid #ff0051;padding-left:14px;color:#5b626a;margin:0 0 12px}
+.rows+.rows{margin-top:22px}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(17,20,20,.94);display:grid;grid-template-columns:64px 1fr 64px;align-items:center}
+.lb[hidden]{display:none}
+.lb figure{display:flex;flex-direction:column;align-items:center;gap:14px;max-height:100vh;padding:28px 0;min-width:0}
+.lb img{max-width:100%;max-height:calc(100vh - 230px);object-fit:contain;border-radius:8px}
+.lb figcaption{max-width:860px;width:100%;color:#e6e8eb;display:flex;flex-direction:column;gap:8px}
+.lb .lc{font-size:15px}
+.lb .lm{font-size:12.5px;color:#9aa1a1}
+.lb .lf{display:flex;gap:6px;flex-wrap:wrap}
+.lb .lf span{font-size:11.5px;color:#1f2323;background:#e9ebee;border-radius:999px;padding:2px 9px}
+.lb .ac a,.lb .ac button{color:#fff;border-color:#fff}
+.lb .ac a:hover,.lb .ac button:hover{background:#fff;color:#1f2323}
+.lb>button{all:unset;cursor:pointer;color:#fff;font-size:40px;line-height:1;text-align:center;padding:12px}
+.lb .lx{position:absolute;top:14px;right:20px;font-size:34px}
+.lb>button:focus-visible{outline:2px solid #ff0051}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#1f2323;color:#fff;font-size:13px;padding:9px 16px;border-radius:999px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:60}
+.toast.on{opacity:1}
+@media(max-width:1100px){.grid.g3{grid-template-columns:repeat(2,1fr)}.filmrow{grid-template-columns:1fr}}
+@media(max-width:640px){.grid.g2,.grid.g3{grid-template-columns:1fr}.lb{grid-template-columns:40px 1fr 40px}.lb>button{font-size:30px;padding:6px}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="side">
+    <img src="wf-logo.svg" class="logo" alt="WorldFirst"/>
+    <div class="nt">Contents</div>
+    <a href="#picks" data-s="picks"><span class="n">01</span><span>Top picks</span></a><a href="#frames" data-s="frames"><span class="n">02</span><span>All photos</span></a><a href="#use" data-s="use"><span class="n">03</span><span>Using these photos</span></a>
+  </nav>
+  <main>
+    <div class="hd">
+      <div class="ey">WorldFirst · Business customer story · Visual library</div>
+      <h1>KeaBabies visual library</h1>
+      <p class="sub">Photos of KeaBabies from the client and its own channels, picked for the case page, social posts and sales material. Select a photo to see it full size. Each one downloads at its original resolution.</p>
+      <div class="meta">14 photos · 4 top picks ·  · updated 10 Nov 2026</div>
+    </div>
+
+    <section id="picks">
+      <div class="sn">01</div>
+      <h2>Top picks</h2>
+      <p class="lead">The frames to reach for first: sharp, clean of on-screen text, and strongest for the page.</p>
+      <div class="grid g2"><figure class="fr big" data-cat="portrait" data-use="hero og" data-i="0"><button type="button" class="th" aria-label="View full size: Founders Jane Neo and Ivan Ong with their two sons on a sofa (current hero)"><img src="thumbs/keababies-1.webp" width="2880" height="1100" alt="Jane Neo and Ivan Ong, founders of KeaBabies, sit on a sofa in white T-shirts with their two young sons, each boy holding a green plush chick toy." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">Package asset (WorldFirst SG customer story pages)</span><span class="ct">Portrait</span><span class="px">2880 x 1100</span></div><p class="cap">Founders Jane Neo and Ivan Ong with their two sons on a sofa (current hero)</p><div class="us"><span class="u">Hero</span><span class="u">Share image</span></div><div class="fls"><span class="fl">Children: needs client permission</span></div><div class="ac"><a href="frames/keababies-1.jpg" download>Download</a><button type="button" class="ca" data-alt="Jane Neo and Ivan Ong, founders of KeaBabies, sit on a sofa in white T-shirts with their two young sons, each boy holding a green plush chick toy.">Copy alt text</button></div></figcaption></figure><figure class="fr big" data-cat="process" data-use="intro social-1x1" data-i="1"><button type="button" class="th" aria-label="View full size: Ivan Ong and Jane Neo checking KeaBabies product boxes in their warehouse"><img src="thumbs/keababies-2.webp" width="844" height="604" alt="KeaBabies founders Ivan Ong and Jane Neo stand by warehouse shelving looking at boxes of KeaBabies crib sheets." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">Package asset (WorldFirst SG customer story pages)</span><span class="ct">Operations</span><span class="px">844 x 604</span></div><p class="cap">Ivan Ong and Jane Neo checking KeaBabies product boxes in their warehouse</p><div class="us"><span class="u">Intro image</span><span class="u">Social 1:1</span></div><div class="fls"><span class="fl">Low resolution</span></div><div class="ac"><a href="frames/keababies-2.jpg" download>Download</a><button type="button" class="ca" data-alt="KeaBabies founders Ivan Ong and Jane Neo stand by warehouse shelving looking at boxes of KeaBabies crib sheets.">Copy alt text</button></div></figcaption></figure><figure class="fr big" data-cat="portrait" data-use="social-4x5" data-i="2"><button type="button" class="th tall" aria-label="View full size: Jane and Ivan with their sons on a beach at sunset"><img src="thumbs/keababies-3.webp" width="700" height="800" alt="A smiling couple stands on a beach at sunset with their two young sons in front of them." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">keababies.com</span><span class="ct">Portrait</span><span class="px">700 x 800</span></div><p class="cap">Jane and Ivan with their sons on a beach at sunset</p><div class="us"><span class="u">Social 4:5</span></div><div class="fls"><span class="fl">Children: needs client permission</span><span class="fl">Low resolution</span></div><div class="ac"><a href="frames/keababies-3.jpg" download>Download</a><button type="button" class="ca" data-alt="A smiling couple stands on a beach at sunset with their two young sons in front of them.">Copy alt text</button></div></figcaption></figure><figure class="fr big" data-cat="product" data-use="intro banner" data-i="3"><button type="button" class="th" aria-label="View full size: A mother carries her baby in a sage KeaBabies wrap"><img src="thumbs/keababies-4.webp" width="1622" height="960" alt="A smiling woman wears a sage green KeaBabies baby wrap carrier with a baby held against her chest in a bright room." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">keababies.com</span><span class="ct">Product</span><span class="px">1622 x 960</span></div><p class="cap">A mother carries her baby in a sage KeaBabies wrap</p><div class="us"><span class="u">Intro image</span><span class="u">Banner</span></div><div class="fls"><span class="fl">Children: needs client permission</span></div><div class="ac"><a href="frames/keababies-4.jpg" download>Download</a><button type="button" class="ca" data-alt="A smiling woman wears a sage green KeaBabies baby wrap carrier with a baby held against her chest in a bright room.">Copy alt text</button></div></figcaption></figure></div>
+    </section>
+
+    <section id="frames">
+      <div class="sn">02</div>
+      <h2>All photos</h2>
+      <p class="lead">Filter by what the frame shows or by where it can be used. Use tags mean the frame crops to that slot without losing the subject.</p>
+      <div class="chips" role="group" aria-label="Filter by category"><button type="button" class="chip on" data-c="">All <i>14</i></button><button type="button" class="chip" data-c="portrait">Portrait <i>2</i></button><button type="button" class="chip" data-c="product">Product <i>11</i></button><button type="button" class="chip" data-c="process">Operations <i>1</i></button></div>
+      <div class="chips" role="group" aria-label="Filter by use"><button type="button" class="chip on" data-u="">Any use</button><button type="button" class="chip" data-u="hero">Hero <i>1</i></button><button type="button" class="chip" data-u="intro">Intro image <i>2</i></button><button type="button" class="chip" data-u="banner">Banner <i>6</i></button><button type="button" class="chip" data-u="og">Share image <i>1</i></button><button type="button" class="chip" data-u="social-1x1">Social 1:1 <i>6</i></button><button type="button" class="chip" data-u="social-4x5">Social 4:5 <i>1</i></button></div>
+      <p class="cnt" aria-live="polite"></p>
+      <div class="grid g3"><figure class="fr" data-cat="portrait" data-use="hero og" data-i="0"><button type="button" class="th" aria-label="View full size: Founders Jane Neo and Ivan Ong with their two sons on a sofa (current hero)"><img src="thumbs/keababies-1.webp" width="2880" height="1100" alt="Jane Neo and Ivan Ong, founders of KeaBabies, sit on a sofa in white T-shirts with their two young sons, each boy holding a green plush chick toy." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">Package asset (WorldFirst SG customer story pages)</span><span class="ct">Portrait</span><span class="px">2880 x 1100</span></div><p class="cap">Founders Jane Neo and Ivan Ong with their two sons on a sofa (current hero)</p><div class="us"><span class="u">Hero</span><span class="u">Share image</span></div><div class="fls"><span class="fl">Children: needs client permission</span></div><div class="ac"><a href="frames/keababies-1.jpg" download>Download</a><button type="button" class="ca" data-alt="Jane Neo and Ivan Ong, founders of KeaBabies, sit on a sofa in white T-shirts with their two young sons, each boy holding a green plush chick toy.">Copy alt text</button></div></figcaption></figure><figure class="fr" data-cat="process" data-use="intro social-1x1" data-i="1"><button type="button" class="th" aria-label="View full size: Ivan Ong and Jane Neo checking KeaBabies product boxes in their warehouse"><img src="thumbs/keababies-2.webp" width="844" height="604" alt="KeaBabies founders Ivan Ong and Jane Neo stand by warehouse shelving looking at boxes of KeaBabies crib sheets." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">Package asset (WorldFirst SG customer story pages)</span><span class="ct">Operations</span><span class="px">844 x 604</span></div><p class="cap">Ivan Ong and Jane Neo checking KeaBabies product boxes in their warehouse</p><div class="us"><span class="u">Intro image</span><span class="u">Social 1:1</span></div><div class="fls"><span class="fl">Low resolution</span></div><div class="ac"><a href="frames/keababies-2.jpg" download>Download</a><button type="button" class="ca" data-alt="KeaBabies founders Ivan Ong and Jane Neo stand by warehouse shelving looking at boxes of KeaBabies crib sheets.">Copy alt text</button></div></figcaption></figure><figure class="fr" data-cat="portrait" data-use="social-4x5" data-i="2"><button type="button" class="th tall" aria-label="View full size: Jane and Ivan with their sons on a beach at sunset"><img src="thumbs/keababies-3.webp" width="700" height="800" alt="A smiling couple stands on a beach at sunset with their two young sons in front of them." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">keababies.com</span><span class="ct">Portrait</span><span class="px">700 x 800</span></div><p class="cap">Jane and Ivan with their sons on a beach at sunset</p><div class="us"><span class="u">Social 4:5</span></div><div class="fls"><span class="fl">Children: needs client permission</span><span class="fl">Low resolution</span></div><div class="ac"><a href="frames/keababies-3.jpg" download>Download</a><button type="button" class="ca" data-alt="A smiling couple stands on a beach at sunset with their two young sons in front of them.">Copy alt text</button></div></figcaption></figure><figure class="fr" data-cat="product" data-use="intro banner" data-i="3"><button type="button" class="th" aria-label="View full size: A mother carries her baby in a sage KeaBabies wrap"><img src="thumbs/keababies-4.webp" width="1622" height="960" alt="A smiling woman wears a sage green KeaBabies baby wrap carrier with a baby held against her chest in a bright room." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">keababies.com</span><span class="ct">Product</span><span class="px">1622 x 960</span></div><p class="cap">A mother carries her baby in a sage KeaBabies wrap</p><div class="us"><span class="u">Intro image</span><span class="u">Banner</span></div><div class="fls"><span class="fl">Children: needs client permission</span></div><div class="ac"><a href="frames/keababies-4.jpg" download>Download</a><button type="button" class="ca" data-alt="A smiling woman wears a sage green KeaBabies baby wrap carrier with a baby held against her chest in a bright room.">Copy alt text</button></div></figcaption></figure><figure class="fr" data-cat="product" data-use="banner" data-i="4"><button type="button" class="th" aria-label="View full size: A mother and baby resting together on a bed"><img src="thumbs/keababies-5.webp" width="1281" height="700" alt="A woman lies on a bed kissing a baby wrapped in a soft blue blanket." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">keababies.com</span><span class="ct">Product</span><span class="px">1281 x 700</span></div><p class="cap">A mother and baby resting together on a bed</p><div class="us"><span class="u">Banner</span></div><div class="fls"><span class="fl">Children: needs client permission</span></div><div class="ac"><a href="frames/keababies-5.jpg" download>Download</a><button type="button" class="ca" data-alt="A woman lies on a bed kissing a baby wrapped in a soft blue blanket.">Copy alt text</button></div></figcaption></figure><figure class="fr" data-cat="product" data-use="banner" data-i="5"><button type="button" class="th" aria-label="View full size: A fan of pastel KeaBabies bibs on a wooden tray"><img src="thumbs/keababies-6.webp" width="1622" height="960" alt="Pastel KeaBabies bibs in blue, cream, green and pink fanned out on a woven wooden tray." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">keababies.com</span><span class="ct">Product</span><span class="px">1622 x 960</span></div><p class="cap">A fan of pastel KeaBabies bibs on a wooden tray</p><div class="us"><span class="u">Banner</span></div><div class="ac"><a href="frames/keababies-6.jpg" download>Download</a><button type="button" class="ca" data-alt="Pastel KeaBabies bibs in blue, cream, green and pink fanned out on a woven wooden tray.">Copy alt text</button></div></figcaption></figure><figure class="fr" data-cat="product" data-use="banner" data-i="6"><button type="button" class="th" aria-label="View full size: A KeaBabies toddler pillow with an animal print"><img src="thumbs/keababies-7.webp" width="1622" height="960" alt="Close-up of a white toddler pillow printed with grey animals and a KeaBabies label, lying on a beige sheet." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">keababies.com</span><span class="ct">Product</span><span class="px">1622 x 960</span></div><p class="cap">A KeaBabies toddler pillow with an animal print</p><div class="us"><span class="u">Banner</span></div><div class="ac"><a href="frames/keababies-7.jpg" download>Download</a><button type="button" class="ca" data-alt="Close-up of a white toddler pillow printed with grey animals and a KeaBabies label, lying on a beige sheet.">Copy alt text</button></div></figcaption></figure><figure class="fr" data-cat="product" data-use="banner" data-i="7"><button type="button" class="th" aria-label="View full size: A crawling baby wearing a mustard KeaBabies bandana bib"><img src="thumbs/keababies-8.webp" width="1622" height="960" alt="A laughing baby in a mustard bandana bib crawls across a wooden floor towards the camera." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">keababies.com</span><span class="ct">Product</span><span class="px">1622 x 960</span></div><p class="cap">A crawling baby wearing a mustard KeaBabies bandana bib</p><div class="us"><span class="u">Banner</span></div><div class="fls"><span class="fl">Children: needs client permission</span></div><div class="ac"><a href="frames/keababies-8.jpg" download>Download</a><button type="button" class="ca" data-alt="A laughing baby in a mustard bandana bib crawls across a wooden floor towards the camera.">Copy alt text</button></div></figcaption></figure><figure class="fr" data-cat="product" data-use="banner" data-i="8"><button type="button" class="th" aria-label="View full size: A toddler in a KeaBabies panda top laughs with a pink balloon"><img src="thumbs/keababies-9.webp" width="1536" height="900" alt="A laughing toddler in a black and white panda top holds the string of a pink balloon against a white wall with a line drawing." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">Package asset (WorldFirst SG customer story pages)</span><span class="ct">Product</span><span class="px">1536 x 900</span></div><p class="cap">A toddler in a KeaBabies panda top laughs with a pink balloon</p><div class="us"><span class="u">Banner</span></div><div class="fls"><span class="fl">Children: needs client permission</span></div><div class="ac"><a href="frames/keababies-9.jpg" download>Download</a><button type="button" class="ca" data-alt="A laughing toddler in a black and white panda top holds the string of a pink balloon against a white wall with a line drawing.">Copy alt text</button></div></figcaption></figure><figure class="fr" data-cat="product" data-use="social-1x1" data-i="9"><button type="button" class="th" aria-label="View full size: KeaBabies wooden baby hairbrush set and box"><img src="thumbs/keababies-10.webp" width="2000" height="2000" alt="A KeaBabies walnut baby hairbrush, comb and soft brush beside their illustrated box on white." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">keababies.com</span><span class="ct">Product</span><span class="px">2000 x 2000</span></div><p class="cap">KeaBabies wooden baby hairbrush set and box</p><div class="us"><span class="u">Social 1:1</span></div><div class="ac"><a href="frames/keababies-10.jpg" download>Download</a><button type="button" class="ca" data-alt="A KeaBabies walnut baby hairbrush, comb and soft brush beside their illustrated box on white.">Copy alt text</button></div></figcaption></figure><figure class="fr" data-cat="product" data-use="social-1x1" data-i="10"><button type="button" class="th" aria-label="View full size: KeaBabies diaper backpack, open to show bottle pockets"><img src="thumbs/keababies-11.webp" width="2500" height="2500" alt="A black KeaBabies diaper backpack with its front open, showing three insulated bottle pockets and a wipes pouch." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">keababies.com</span><span class="ct">Product</span><span class="px">2500 x 2500</span></div><p class="cap">KeaBabies diaper backpack, open to show bottle pockets</p><div class="us"><span class="u">Social 1:1</span></div><div class="ac"><a href="frames/keababies-11.jpg" download>Download</a><button type="button" class="ca" data-alt="A black KeaBabies diaper backpack with its front open, showing three insulated bottle pockets and a wipes pouch.">Copy alt text</button></div></figcaption></figure><figure class="fr" data-cat="product" data-use="social-1x1" data-i="11"><button type="button" class="th" aria-label="View full size: KeaBabies silicone suction plates with lids"><img src="thumbs/keababies-12.webp" width="2500" height="2500" alt="Three KeaBabies divided silicone plates in green, cream and slate blue with clear lids, beside their kraft box." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">keababies.com</span><span class="ct">Product</span><span class="px">2500 x 2500</span></div><p class="cap">KeaBabies silicone suction plates with lids</p><div class="us"><span class="u">Social 1:1</span></div><div class="ac"><a href="frames/keababies-12.jpg" download>Download</a><button type="button" class="ca" data-alt="Three KeaBabies divided silicone plates in green, cream and slate blue with clear lids, beside their kraft box.">Copy alt text</button></div></figcaption></figure><figure class="fr" data-cat="product" data-use="social-1x1" data-i="12"><button type="button" class="th" aria-label="View full size: KeaBabies deluxe baby washcloths in white"><img src="thumbs/keababies-13.webp" width="2500" height="2500" alt="A stack of folded white KeaBabies washcloths beside a kraft box labelled Baby Washcloths." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">keababies.com</span><span class="ct">Product</span><span class="px">2500 x 2500</span></div><p class="cap">KeaBabies deluxe baby washcloths in white</p><div class="us"><span class="u">Social 1:1</span></div><div class="ac"><a href="frames/keababies-13.jpg" download>Download</a><button type="button" class="ca" data-alt="A stack of folded white KeaBabies washcloths beside a kraft box labelled Baby Washcloths.">Copy alt text</button></div></figcaption></figure><figure class="fr" data-cat="product" data-use="social-1x1" data-i="13"><button type="button" class="th tall" aria-label="View full size: Eight KeaBabies bandana bibs in plain colours"><img src="thumbs/keababies-14.webp" width="2000" height="2001" alt="Eight KeaBabies bandana bibs in white, navy, sage, olive, grey, rust and black laid out in rows on white." loading="lazy"/></button><figcaption><div class="ft"><span class="tc">keababies.com</span><span class="ct">Product</span><span class="px">2000 x 2001</span></div><p class="cap">Eight KeaBabies bandana bibs in plain colours</p><div class="us"><span class="u">Social 1:1</span></div><div class="ac"><a href="frames/keababies-14.jpg" download>Download</a><button type="button" class="ca" data-alt="Eight KeaBabies bandana bibs in white, navy, sage, olive, grey, rust and black laid out in rows on white.">Copy alt text</button></div></figcaption></figure></div>
+    </section>
+
+    <section id="use">
+      <div class="sn">03</div>
+      <h2>Using these photos</h2>
+      <p class="lead">Crop to the slot; never stretch a frame or a logo, and never upscale. Clear every flag before a frame goes public.</p>
+      <div class="rows"><div class="row"><div class="rl">Hero, desktop</div><div class="rv">906 x 680 (4:3)</div></div><div class="row"><div class="rl">Hero, tablet</div><div class="rv">1152 x 768 (3:2)</div></div><div class="row"><div class="rl">Hero, mobile</div><div class="rv">540 x 360 (3:2)</div></div><div class="row"><div class="rl">Introduction image</div><div class="rv">1143 x 491</div></div><div class="row"><div class="rl">Quote headshot</div><div class="rv">120 x 120 (1:1)</div></div><div class="row"><div class="rl">Share image</div><div class="rv">1200 x 630</div></div><div class="row"><div class="rl">Social</div><div class="rv">1080 x 1080 (1:1), 1080 x 1350 (4:5)</div></div><div class="row"><div class="rl">Story</div><div class="rv">1080 x 1920 (9:16)</div></div></div>
+      <div class="rows"><div class="row"><div class="rl">Text in frame</div><div class="rv">Captions, a lower third or a title card is in the frame. Crop it out or pick another frame.</div></div><div class="row"><div class="rl">Third-party brand</div><div class="rv">Another company&#x27;s name or logo is visible (named in the crop hint). Clear it or crop it out.</div></div><div class="row"><div class="rl">Competitor</div><div class="rv">A competitor is visible. Never used; listed only if the audit needs it.</div></div><div class="row"><div class="rl">Children: needs client permission</div><div class="rv">Children are visible. Needs the client&#x27;s written permission before any use.</div></div><div class="row"><div class="rl">WorldFirst branding</div><div class="rv">The WorldFirst logo or app is on screen. Check it is the current logo and product name.</div></div><div class="row"><div class="rl">Low resolution</div><div class="rv">Under the width of the larger slots. Small uses only.</div></div><div class="row"><div class="rl">Soft focus</div><div class="rv">Slightly soft. Small uses only.</div></div></div>
+      <div class="note">Photos come from the client or its own website and channels, as noted on each one. Confirm permission before a photo goes public, and clear anything showing children, a third-party brand or on-screen text.</div>
+    </section>
+  </main>
+</div>
+
+<div class="lb" hidden role="dialog" aria-modal="true" aria-label="Frame, full size">
+  <button type="button" class="lx" aria-label="Close">&times;</button>
+  <button type="button" class="lp" aria-label="Previous frame">&#8249;</button>
+  <figure><img alt=""/><figcaption><p class="lc"></p><p class="lm"></p><div class="lf"></div>
+    <div class="ac"><a class="ld" download>Download full frame</a><button type="button" class="ca lca">Copy alt text</button></div></figcaption></figure>
+  <button type="button" class="ln" aria-label="Next frame">&#8250;</button>
+</div>
+<div class="toast" role="status" aria-live="polite"></div>
+<script>window.LIB=[{"src": "frames/keababies-1.jpg", "cap": "Founders Jane Neo and Ivan Ong with their two sons on a sofa (current hero)", "alt": "Jane Neo and Ivan Ong, founders of KeaBabies, sit on a sofa in white T-shirts with their two young sons, each boy holding a green plush chick toy.", "t": "00:00", "crop": "Current hero. Family sits x 0.40-1.0 of a wide 2880x1100 banner with an empty cream left side; 4:3 crop x 0.42-1.0 is about 1450 px wide. Web-served copy; print original not held.", "flags": ["Children: needs client permission"], "px": "2880 x 1100"}, {"src": "frames/keababies-2.jpg", "cap": "Ivan Ong and Jane Neo checking KeaBabies product boxes in their warehouse", "alt": "KeaBabies founders Ivan Ong and Jane Neo stand by warehouse shelving looking at boxes of KeaBabies crib sheets.", "t": "00:00", "crop": "Best business photo in the set but only 844x604, below the 906 px hero minimum. The page intro (812x349) is cropped from it. Ask the client for the original.", "flags": ["Low resolution"], "px": "844 x 604"}, {"src": "frames/keababies-3.jpg", "cap": "Jane and Ivan with their sons on a beach at sunset", "alt": "A smiling couple stands on a beach at sunset with their two young sons in front of them.", "t": "00:00", "crop": "700x800 with rounded corners baked in. On the About Us page beside 'Hey, we're Jane & Ivan!'.", "flags": ["Children: needs client permission", "Low resolution"], "px": "700 x 800"}, {"src": "frames/keababies-4.jpg", "cap": "A mother carries her baby in a sage KeaBabies wrap", "alt": "A smiling woman wears a sage green KeaBabies baby wrap carrier with a baby held against her chest in a bright room.", "t": "00:00", "crop": "1622x960 homepage banner; subject x 0.30-0.55. Model, not a named person.", "flags": ["Children: needs client permission"], "px": "1622 x 960"}, {"src": "frames/keababies-5.jpg", "cap": "A mother and baby resting together on a bed", "alt": "A woman lies on a bed kissing a baby wrapped in a soft blue blanket.", "t": "00:00", "crop": "1281x700 homepage banner; models.", "flags": ["Children: needs client permission"], "px": "1281 x 700"}, {"src": "frames/keababies-6.jpg", "cap": "A fan of pastel KeaBabies bibs on a wooden tray", "alt": "Pastel KeaBabies bibs in blue, cream, green and pink fanned out on a woven wooden tray.", "t": "00:00", "crop": "1622x960 homepage banner; clean.", "flags": [], "px": "1622 x 960"}, {"src": "frames/keababies-7.jpg", "cap": "A KeaBabies toddler pillow with an animal print", "alt": "Close-up of a white toddler pillow printed with grey animals and a KeaBabies label, lying on a beige sheet.", "t": "00:00", "crop": "1622x960 homepage banner.", "flags": [], "px": "1622 x 960"}, {"src": "frames/keababies-8.jpg", "cap": "A crawling baby wearing a mustard KeaBabies bandana bib", "alt": "A laughing baby in a mustard bandana bib crawls across a wooden floor towards the camera.", "t": "00:00", "crop": "1622x960 homepage banner; model.", "flags": ["Children: needs client permission"], "px": "1622 x 960"}, {"src": "frames/keababies-9.jpg", "cap": "A toddler in a KeaBabies panda top laughs with a pink balloon", "alt": "A laughing toddler in a black and white panda top holds the string of a pink balloon against a white wall with a line drawing.", "t": "00:00", "crop": "1536x900 from the WorldFirst SG page; model.", "flags": ["Children: needs client permission"], "px": "1536 x 900"}, {"src": "frames/keababies-10.jpg", "cap": "KeaBabies wooden baby hairbrush set and box", "alt": "A KeaBabies walnut baby hairbrush, comb and soft brush beside their illustrated box on white.", "t": "00:00", "crop": "2000x2000 Amazon-style main image on white.", "flags": [], "px": "2000 x 2000"}, {"src": "frames/keababies-11.jpg", "cap": "KeaBabies diaper backpack, open to show bottle pockets", "alt": "A black KeaBabies diaper backpack with its front open, showing three insulated bottle pockets and a wipes pouch.", "t": "00:00", "crop": "2500x2500 main image on white.", "flags": [], "px": "2500 x 2500"}, {"src": "frames/keababies-12.jpg", "cap": "KeaBabies silicone suction plates with lids", "alt": "Three KeaBabies divided silicone plates in green, cream and slate blue with clear lids, beside their kraft box.", "t": "00:00", "crop": "2500x2500 main image on white.", "flags": [], "px": "2500 x 2500"}, {"src": "frames/keababies-13.jpg", "cap": "KeaBabies deluxe baby washcloths in white", "alt": "A stack of folded white KeaBabies washcloths beside a kraft box labelled Baby Washcloths.", "t": "00:00", "crop": "2500x2500 main image on white.", "flags": [], "px": "2500 x 2500"}, {"src": "frames/keababies-14.jpg", "cap": "Eight KeaBabies bandana bibs in plain colours", "alt": "Eight KeaBabies bandana bibs in white, navy, sage, olive, grey, rust and black laid out in rows on white.", "t": "00:00", "crop": "2000x2001 main image on white.", "flags": [], "px": "2000 x 2001"}];</script>
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav.side a[data-s]'));
+  var secs=links.map(function(a){return document.getElementById(a.dataset.s);}).filter(Boolean);
+  function spy(){var cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<=140)cur=i;});
+    links.forEach(function(a,i){a.classList.toggle('on',i===cur);});}
+  window.addEventListener('scroll',spy,{passive:true});spy();
+
+  var toast=document.querySelector('.toast'),tt;
+  function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on');},1600);}
+  function copy(t){
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(function(){say('Alt text copied');},function(){fallback(t);});}
+    else fallback(t);
+  }
+  function fallback(t){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();
+    var ok=false;try{ok=document.execCommand('copy');}catch(e){}a.remove();say(ok?'Alt text copied':'Copy failed: select the text by hand');}
+
+  document.querySelectorAll('.film .play').forEach(function(b){b.addEventListener('click',function(){
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?autoplay=1&rel=0&playsinline=1&modestbranding=1';
+    f.title=b.getAttribute('aria-label');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;
+    b.replaceWith(f);});});
+
+  var cards=[].slice.call(document.querySelectorAll('#frames .fr')),cnt=document.querySelector('.cnt'),fc='',fu='';
+  function filt(){var n=0;cards.forEach(function(c){var ok=(!fc||c.dataset.cat===fc)&&(!fu||(' '+c.dataset.use+' ').indexOf(' '+fu+' ')>-1);
+      c.hidden=!ok;if(ok)n++;});cnt.textContent=n+' of '+cards.length+' frames';}
+  document.querySelectorAll('.chip').forEach(function(ch){ch.addEventListener('click',function(){
+    var k=ch.dataset.c!==undefined?'c':'u';
+    document.querySelectorAll('.chip[data-'+k+']').forEach(function(x){x.classList.toggle('on',x===ch);});
+    if(k==='c')fc=ch.dataset.c;else fu=ch.dataset.u;filt();});});
+  filt();
+
+  var lb=document.querySelector('.lb'),li=lb.querySelector('img'),cur=0,last=null;
+  function show(i){cur=(i+LIB.length)%LIB.length;var d=LIB[cur];li.src=d.src;li.alt=d.alt;
+    lb.querySelector('.lc').textContent=d.cap;
+    lb.querySelector('.lm').textContent=d.t+'  ·  '+d.px+(d.crop?'  ·  Crop: '+d.crop:'');
+    lb.querySelector('.lf').innerHTML=d.flags.map(function(f){return '<span>'+f.replace(/</g,'&lt;')+'</span>';}).join('');
+    var dl=lb.querySelector('.ld');dl.href=d.src;lb.querySelector('.lca').dataset.alt=d.alt;}
+  function open(i){last=document.activeElement;show(i);lb.hidden=false;document.body.style.overflow='hidden';lb.querySelector('.lx').focus();}
+  function close(){lb.hidden=true;document.body.style.overflow='';li.removeAttribute('src');if(last)last.focus();}
+  document.querySelectorAll('.fr .th').forEach(function(b){b.addEventListener('click',function(){open(+b.closest('.fr').dataset.i);});});
+  lb.querySelector('.lx').addEventListener('click',close);
+  lb.querySelector('.lp').addEventListener('click',function(){show(cur-1);});
+  lb.querySelector('.ln').addEventListener('click',function(){show(cur+1);});
+  lb.addEventListener('click',function(ev){if(ev.target===lb)close();});
+  document.addEventListener('keydown',function(ev){if(lb.hidden)return;
+    if(ev.key==='Escape')close();else if(ev.key==='ArrowLeft')show(cur-1);else if(ev.key==='ArrowRight')show(cur+1);});
+  document.addEventListener('click',function(ev){var b=ev.target.closest('.ca');if(b)copy(b.dataset.alt||'');});
+})();
+</script>
+</body></html>
