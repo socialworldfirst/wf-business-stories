@@ -2065,7 +2065,7 @@ font-size: 14px !important;
 <div class="elementor-heading-title elementor-size-default">For two years the team had no way of getting large RMB payments to a Chinese factory. An Australian or US bank wire won’t reach a supplier who wants a domestic payment, so they had to resort to asking relatives in China to pay the factories and the business paid the relatives back. The sourcing team in China did the same thing, buying stock using their own accounts, and waiting to be reimbursed.</div> </div>
 </div><div class="elementor-element elementor-element-953a109 elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="wfbs-secimg" data-widget_type="image.default">
 <div class="elementor-widget-container">
-<img alt="Two men in a stockroom with stacked cartons and packed goods, one of them filming on a phone." class="attachment-large size-large wp-image-110759 entered" data-ll-status="loaded" decoding="async" height="344" src="wordpress/cheekyglo_challenge-sub-1_1143x491.webp" width="800"/> </div>
+<img alt="Two men in a stockroom with stacked cartons and packed goods, one of them filming on a phone." class="attachment-large size-large wp-image-110759 entered" data-fb-img="challenge_sub_1" data-fb-src="assets/stockroom_film.jpg" data-ll-status="loaded" decoding="async" height="344" src="wordpress/cheekyglo_challenge-sub-1_1143x491.webp" width="800"/> </div>
 </div>
 
 </div>
@@ -3070,16 +3070,16 @@ font-size: 14px !important;
     function fb(t){var x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');}catch(e){}x.remove();}
     function head(){return '/wf_business_story '+m.dataset.slug+'\n';}
     function tail(){return '\nAct on it, rebuild, run the checks and ship. Do not ask me in between.';}
-    document.querySelectorAll('img[data-wfbs-img]').forEach(function(im){im.style.cursor='pointer';im.title='Click to remove this image or add a note';
+    document.querySelectorAll('img[data-fb-img]').forEach(function(im){im.style.cursor='pointer';im.title='Click to remove this image or add a note';
       im.addEventListener('click',function(ev){ev.preventDefault();cur=im;last=document.activeElement;
-        f.textContent=im.dataset.wfbsImg.replace(/_/g,' ')+' · '+im.dataset.wfbsSrc;ta.value='';ok.textContent='';m.hidden=false;ta.focus();});});
+        f.textContent=im.dataset.fbImg.replace(/_/g,' ')+' · '+im.dataset.fbSrc;ta.value='';ok.textContent='';m.hidden=false;ta.focus();});});
     m.querySelector('.wfbs-im__x').addEventListener('click',shut);m.querySelector('.wfbs-im__bg').addEventListener('click',shut);
     document.addEventListener('keydown',function(ev){if(!m.hidden&&ev.key==='Escape')shut();});
     m.querySelector('.wfbs-im__rm').addEventListener('click',function(){
-      copy(head()+'Remove the '+cur.dataset.wfbsImg.replace(/_/g,' ')+' image ('+cur.dataset.wfbsSrc+') from the page.'+tail(),'Prompt copied: paste it to Claude');});
+      copy(head()+'Remove the '+cur.dataset.fbImg.replace(/_/g,' ')+' image ('+cur.dataset.fbSrc+') from the page.'+tail(),'Prompt copied: paste it to Claude');});
     m.querySelector('.wfbs-im__nt').addEventListener('click',function(){
       if(!ta.value.trim()){ok.textContent='Write a note first';ta.focus();return;}
-      copy(head()+'About the '+cur.dataset.wfbsImg.replace(/_/g,' ')+' image ('+cur.dataset.wfbsSrc+'): '+ta.value.trim()+tail(),'Prompt copied: paste it to Claude');});
+      copy(head()+'About the '+cur.dataset.fbImg.replace(/_/g,' ')+' image ('+cur.dataset.fbSrc+'): '+ta.value.trim()+tail(),'Prompt copied: paste it to Claude');});
   })();
   var a=document.querySelector('.wfbs-lib'),p=document.querySelector('.wfbs-libp');
   if(!a||!p)return;

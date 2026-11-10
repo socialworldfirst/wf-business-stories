@@ -2037,7 +2037,7 @@ font-size: 14px !important;
 <div class="elementor-heading-title elementor-size-default">Today, Fresh4U Produce imports fresh fruit and vegetables from more than 35 countries, with a range that runs to more than 240 products, and includes everything from lychees to dragonfruit. The business turns over £18 million, and has expanded to a team of 40. In 2025 the Fresh Produce Consortium named it Wholesale Fruit and Veg Supplier of the Year.</div> </div>
 </div><div class="elementor-element elementor-element-953a109 elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="953a109" data-widget_type="image.default">
 <div class="elementor-widget-container">
-<img alt="Fresh4U staff in hi-vis jackets among trays of fruit and vegetables and stacked boxes at a wholesale market unit." class="attachment-large size-large wp-image-110759 entered" data-ll-status="loaded" decoding="async" height="344" src="wordpress/fresh4u_intro_1143x491.webp" width="800"/> </div>
+<img alt="Fresh4U staff in hi-vis jackets among trays of fruit and vegetables and stacked boxes at a wholesale market unit." class="attachment-large size-large wp-image-110759 entered" data-fb-img="intro" data-fb-src="assets/intro_market.webp" data-ll-status="loaded" decoding="async" height="344" src="wordpress/fresh4u_intro_1143x491.webp" width="800"/> </div>
 </div><div class="elementor-element elementor-element-a25f9f8 elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="a25f9f8" data-widget_type="heading.default">
 <div class="elementor-widget-container">
 <div class="elementor-heading-title elementor-size-default">Fresh4U Produce grew out of a student job. While studying in London, Fakhruddin "Danial" Paisawala worked in the city's wholesale markets, rising from packer-loader to sales, and taking the weekend shifts nobody else wanted. On a holiday to Kenya in 2008 he met some vegetable exporters. Soon he and his business partner, Hatim Raja, were buying shipments and taking care of collection and delivery themselves.</div> </div>
@@ -2060,7 +2060,7 @@ font-size: 14px !important;
 <div class="elementor-heading-title elementor-size-default">Fresh4U buys from growers and exporters overseas and delivers to its buyers the same or next day. They supply some of London’s top restaurants, as well as independent retailers and other wholesalers around the country and in the Netherlands. The small margin on each box has to cover freight, customs clearance, and duties before the business makes any profit.</div> </div>
 </div><div class="elementor-element elementor-element-953a109 elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="wfbs-secimg" data-widget_type="image.default">
 <div class="elementor-widget-container">
-<img alt="An open cardboard box packed with green beans, with stacked green produce boxes on either side." class="attachment-large size-large wp-image-110759 entered" data-ll-status="loaded" decoding="async" height="344" src="wordpress/fresh4u_challenge_1143x491.webp" width="800"/> </div>
+<img alt="An open cardboard box packed with green beans, with stacked green produce boxes on either side." class="attachment-large size-large wp-image-110759 entered" data-fb-img="challenge" data-fb-src="assets/beans_full.jpg" data-ll-status="loaded" decoding="async" height="344" src="wordpress/fresh4u_challenge_1143x491.webp" width="800"/> </div>
 </div>
 
 </div>
@@ -3045,16 +3045,16 @@ font-size: 14px !important;
     function fb(t){var x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');}catch(e){}x.remove();}
     function head(){return '/wf_business_story '+m.dataset.slug+'\n';}
     function tail(){return '\nAct on it, rebuild, run the checks and ship. Do not ask me in between.';}
-    document.querySelectorAll('img[data-wfbs-img]').forEach(function(im){im.style.cursor='pointer';im.title='Click to remove this image or add a note';
+    document.querySelectorAll('img[data-fb-img]').forEach(function(im){im.style.cursor='pointer';im.title='Click to remove this image or add a note';
       im.addEventListener('click',function(ev){ev.preventDefault();cur=im;last=document.activeElement;
-        f.textContent=im.dataset.wfbsImg.replace(/_/g,' ')+' · '+im.dataset.wfbsSrc;ta.value='';ok.textContent='';m.hidden=false;ta.focus();});});
+        f.textContent=im.dataset.fbImg.replace(/_/g,' ')+' · '+im.dataset.fbSrc;ta.value='';ok.textContent='';m.hidden=false;ta.focus();});});
     m.querySelector('.wfbs-im__x').addEventListener('click',shut);m.querySelector('.wfbs-im__bg').addEventListener('click',shut);
     document.addEventListener('keydown',function(ev){if(!m.hidden&&ev.key==='Escape')shut();});
     m.querySelector('.wfbs-im__rm').addEventListener('click',function(){
-      copy(head()+'Remove the '+cur.dataset.wfbsImg.replace(/_/g,' ')+' image ('+cur.dataset.wfbsSrc+') from the page.'+tail(),'Prompt copied: paste it to Claude');});
+      copy(head()+'Remove the '+cur.dataset.fbImg.replace(/_/g,' ')+' image ('+cur.dataset.fbSrc+') from the page.'+tail(),'Prompt copied: paste it to Claude');});
     m.querySelector('.wfbs-im__nt').addEventListener('click',function(){
       if(!ta.value.trim()){ok.textContent='Write a note first';ta.focus();return;}
-      copy(head()+'About the '+cur.dataset.wfbsImg.replace(/_/g,' ')+' image ('+cur.dataset.wfbsSrc+'): '+ta.value.trim()+tail(),'Prompt copied: paste it to Claude');});
+      copy(head()+'About the '+cur.dataset.fbImg.replace(/_/g,' ')+' image ('+cur.dataset.fbSrc+'): '+ta.value.trim()+tail(),'Prompt copied: paste it to Claude');});
   })();
   var a=document.querySelector('.wfbs-lib'),p=document.querySelector('.wfbs-libp');
   if(!a||!p)return;

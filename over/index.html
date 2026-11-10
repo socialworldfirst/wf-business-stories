@@ -2034,7 +2034,7 @@ font-size: 14px !important;
 <div class="elementor-heading-title elementor-size-default">It began in 2020, when Low Yi Xian went looking for a large sports bottle and couldn't find one he wanted to buy. So he made his own. The biggest holds 3.78 litres and is called Tangki, Malay for tank, and it soon turned up in gyms and offices across Malaysia.</div> </div>
 </div><div class="elementor-element elementor-element-953a109 elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="953a109" data-widget_type="image.default">
 <div class="elementor-widget-container">
-<img alt="A hand pours water from a green OVER bottle through its flip-top spout on a teal background." class="attachment-large size-large wp-image-110759 entered" data-ll-status="loaded" decoding="async" height="344" src="wordpress/over_intro_1143x491.webp" width="800"/> </div>
+<img alt="A hand pours water from a green OVER bottle through its flip-top spout on a teal background." class="attachment-large size-large wp-image-110759 entered" data-fb-img="intro" data-fb-src="assets/intro_pour.jpg" data-ll-status="loaded" decoding="async" height="344" src="wordpress/over_intro_1143x491.webp" width="800"/> </div>
 </div><div class="elementor-element elementor-element-ee2ce1b elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="ee2ce1b" data-widget_type="heading.default">
 <div class="elementor-widget-container">
 <div class="elementor-heading-title elementor-size-default">Today OVER Malaysia also makes flasks, tumblers, recovery products, bags, and apparel. It sells them on its own website, on Shopee, in its own outlets, and to companies that order in bulk with custom printing and engraving. By its latest figures, the brand has sold more than 250,000 bottles and earned RM8 million in revenue.</div> </div>
@@ -2983,16 +2983,16 @@ font-size: 14px !important;
     function fb(t){var x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');}catch(e){}x.remove();}
     function head(){return '/wf_business_story '+m.dataset.slug+'\n';}
     function tail(){return '\nAct on it, rebuild, run the checks and ship. Do not ask me in between.';}
-    document.querySelectorAll('img[data-wfbs-img]').forEach(function(im){im.style.cursor='pointer';im.title='Click to remove this image or add a note';
+    document.querySelectorAll('img[data-fb-img]').forEach(function(im){im.style.cursor='pointer';im.title='Click to remove this image or add a note';
       im.addEventListener('click',function(ev){ev.preventDefault();cur=im;last=document.activeElement;
-        f.textContent=im.dataset.wfbsImg.replace(/_/g,' ')+' · '+im.dataset.wfbsSrc;ta.value='';ok.textContent='';m.hidden=false;ta.focus();});});
+        f.textContent=im.dataset.fbImg.replace(/_/g,' ')+' · '+im.dataset.fbSrc;ta.value='';ok.textContent='';m.hidden=false;ta.focus();});});
     m.querySelector('.wfbs-im__x').addEventListener('click',shut);m.querySelector('.wfbs-im__bg').addEventListener('click',shut);
     document.addEventListener('keydown',function(ev){if(!m.hidden&&ev.key==='Escape')shut();});
     m.querySelector('.wfbs-im__rm').addEventListener('click',function(){
-      copy(head()+'Remove the '+cur.dataset.wfbsImg.replace(/_/g,' ')+' image ('+cur.dataset.wfbsSrc+') from the page.'+tail(),'Prompt copied: paste it to Claude');});
+      copy(head()+'Remove the '+cur.dataset.fbImg.replace(/_/g,' ')+' image ('+cur.dataset.fbSrc+') from the page.'+tail(),'Prompt copied: paste it to Claude');});
     m.querySelector('.wfbs-im__nt').addEventListener('click',function(){
       if(!ta.value.trim()){ok.textContent='Write a note first';ta.focus();return;}
-      copy(head()+'About the '+cur.dataset.wfbsImg.replace(/_/g,' ')+' image ('+cur.dataset.wfbsSrc+'): '+ta.value.trim()+tail(),'Prompt copied: paste it to Claude');});
+      copy(head()+'About the '+cur.dataset.fbImg.replace(/_/g,' ')+' image ('+cur.dataset.fbSrc+'): '+ta.value.trim()+tail(),'Prompt copied: paste it to Claude');});
   })();
   var a=document.querySelector('.wfbs-lib'),p=document.querySelector('.wfbs-libp');
   if(!a||!p)return;
