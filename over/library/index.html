@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB"><head>
+<html lang="en-GB" data-pt-slug="over"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="robots" content="noindex, nofollow"/>
 <title>OVER visual library · WorldFirst</title>
@@ -177,6 +177,39 @@ pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;paddin
 @media(max-width:1100px){.grid.g3{grid-template-columns:repeat(2,1fr)}.filmrow{grid-template-columns:1fr}}
 @media(max-width:640px){.grid.g2,.grid.g3{grid-template-columns:1fr}.lb{grid-template-columns:40px 1fr 40px}.lb>button{font-size:30px;padding:6px}}
 
+
+.pt-btn{position:fixed;left:24px;bottom:43px;z-index:10001;all:unset;position:fixed;left:24px;bottom:43px;z-index:10001;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 16px 0 12px;border-radius:999px;background:#fff;border:1.5px solid #E6E8EB;box-shadow:0 6px 24px rgba(31,35,35,.12);font:600 15px Poppins,sans-serif;color:#1F2323;cursor:pointer}
+.pt-btn:hover{border-color:#FF0051}
+.pt-btn:focus-visible{outline:2px solid #FF0051;outline-offset:3px}
+.pt-ic{width:26px;height:26px;border-radius:7px;background:#FF0051;color:#fff;display:grid;place-items:center;font-size:14px}
+.pt-n{font-size:12px;color:#69727D;background:#F2F3F5;border-radius:999px;padding:4px 8px;font-variant-numeric:tabular-nums}
+.pt-btn.has .pt-n{background:#FF0051;color:#fff}
+.pt{position:fixed;inset:0;z-index:10005;font-family:Poppins,sans-serif}
+.pt[hidden]{display:none}
+.pt-bg{position:absolute;inset:0;background:rgba(31,35,35,.45)}
+.pt-sh{position:absolute;top:0;left:0;bottom:0;width:min(460px,100vw);background:#fff;display:flex;flex-direction:column;gap:10px;padding:18px 20px;overflow:auto}
+.pt-hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pt-hd b{font-size:17px;color:#1F2323}
+.pt-sub{font-size:12px;color:#69727D}
+.pt .pt-x{all:unset;margin-left:auto;cursor:pointer;font-size:28px;line-height:1;color:#69727D}
+.pt-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.pt-list li{position:relative;border:1.5px solid #E6E8EB;border-radius:12px;padding:10px 34px 10px 12px;font-size:13px;line-height:1.5;color:#1F2323;white-space:pre-wrap;word-break:break-word}
+.pt-list li small{display:block;font-size:11px;font-weight:600;color:#FF0051;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.pt .pt-del{all:unset;position:absolute;top:6px;right:10px;cursor:pointer;font-size:20px;color:#9AA1A1}
+.pt-empty{font-size:13px;color:#69727D;margin:0}
+.pt-l{font-size:13px;font-weight:600;color:#1F2323;margin-top:6px}
+.pt textarea{font:14px Poppins,sans-serif;border:1.5px solid #E6E8EB;border-radius:10px;padding:10px;resize:vertical}
+.pt textarea:focus{outline:none;border-color:#FF0051}
+.pt-row{display:flex}
+.pt-ft{display:flex;gap:8px;margin-top:auto;padding-top:8px}
+.pt .pt-add,.pt .pt-copy,.pt .pt-clear{all:unset;cursor:pointer;text-align:center;font-size:14px;font-weight:600;border-radius:999px;padding:9px 16px}
+.pt .pt-copy{background:#FF0051;color:#fff;flex:1}
+.pt .pt-add,.pt .pt-clear{border:1.5px solid #FF0051;color:#FF0051}
+.pt-ok{font-size:12.5px;color:#137333;min-height:16px;margin:0}
+.pt-toast{position:fixed;left:24px;bottom:100px;z-index:10006;background:#1F2323;color:#fff;font:13px Poppins,sans-serif;padding:9px 16px;border-radius:999px;opacity:0;transition:opacity .2s;pointer-events:none}
+.pt-toast.on{opacity:1}
+@media(max-width:767px){.pt-btn{left:16px;bottom:51px;height:44px;font-size:14px}}
+
 </style>
 </head>
 <body>
@@ -232,6 +265,40 @@ pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;paddin
   <button type="button" class="ln" aria-label="Next frame">&#8250;</button>
 </div>
 <div class="toast" role="status" aria-live="polite"></div>
+<button type="button" class="pt-btn" aria-haspopup="dialog" aria-label="Open the prompt tray"><span class="pt-ic" aria-hidden="true">&#10003;</span><span>Prompts</span><span class="pt-n">0</span></button><div class="pt" hidden><div class="pt-bg"></div><div class="pt-sh" role="dialog" aria-modal="true" aria-label="Prompt tray"><div class="pt-hd"><b>Prompt tray</b><span class="pt-sub">Saved on this device across every case page</span><button type="button" class="pt-x" aria-label="Close">&times;</button></div><ol class="pt-list"></ol><p class="pt-empty">Nothing yet. Click a body image, or use Set as hero / Use in body in a visual library.</p><label class="pt-l" for="pt-note">Add a note for this page</label><textarea id="pt-note" rows="2" placeholder="Anything else to change on this page"></textarea><div class="pt-row"><button type="button" class="pt-add">Add note</button></div><div class="pt-ft"><button type="button" class="pt-copy">Copy all as one prompt</button><button type="button" class="pt-clear">Clear</button></div><p class="pt-ok" aria-live="polite"></p></div></div><div class="pt-toast" aria-live="polite"></div>
+<script>
+window.WFPT=(function(){
+  var KEY='wf-prompt-tray',slug=document.documentElement.getAttribute('data-pt-slug')||'';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a));}catch(e){}render();}
+  var btn=document.querySelector('.pt-btn'),p=document.querySelector('.pt'),list=p.querySelector('.pt-list'),
+      empty=p.querySelector('.pt-empty'),n=btn.querySelector('.pt-n'),ok=p.querySelector('.pt-ok'),
+      toast=document.querySelector('.pt-toast'),tt,last=null;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){var a=load();n.textContent=a.length;btn.classList.toggle('has',a.length>0);empty.hidden=a.length>0;
+    list.innerHTML=a.map(function(x,i){return '<li><small>'+esc(x.c)+' · '+esc(x.k)+'</small>'+esc(x.t)+
+      '<button type="button" class="pt-del" data-i="'+i+'" aria-label="Remove this prompt">&times;</button></li>';}).join('');}
+  function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on');},1800);}
+  function add(c,k,t){var a=load();a.push({c:c||slug,k:k,t:t,at:Date.now()});save(a);say('Added to prompts ('+a.length+')');}
+  list.addEventListener('click',function(e){var b=e.target.closest('.pt-del');if(!b)return;var a=load();a.splice(+b.dataset.i,1);save(a);});
+  function open(){render();ok.textContent='';p.hidden=false;last=document.activeElement;p.querySelector('.pt-x').focus();}
+  function shut(){p.hidden=true;if(last)last.focus();}
+  btn.addEventListener('click',open);p.querySelector('.pt-x').addEventListener('click',shut);p.querySelector('.pt-bg').addEventListener('click',shut);
+  document.addEventListener('keydown',function(e){if(!p.hidden&&e.key==='Escape')shut();});
+  p.querySelector('.pt-add').addEventListener('click',function(){var ta=p.querySelector('textarea'),v=ta.value.trim();
+    if(!v){ok.textContent='Write a note first';ta.focus();return;}add(slug,'note',v);ta.value='';});
+  function fb(t){var x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');}catch(e){}x.remove();}
+  p.querySelector('.pt-copy').addEventListener('click',function(){var a=load();if(!a.length){ok.textContent='Nothing to copy yet';return;}
+    var t='/wf_business_story\nWork through these '+a.length+' review prompts from the case pages. For each, change the page, rebuild, run the checks and ship. Image process ON means clean the image in ChatGPT first (remove captions, logos and marks, keep everything else), then use it. Do not ask me in between.\n\n'+
+      a.map(function(x,i){return (i+1)+'. ['+x.c+'] '+x.t;}).join('\n\n');
+    function done(){ok.textContent='Copied '+a.length+' prompts: paste them to Claude. Clear the tray once sent.';}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,function(){fb(t);done();});}else{fb(t);done();}});
+  p.querySelector('.pt-clear').addEventListener('click',function(){save([]);ok.textContent='Tray cleared';});
+  window.addEventListener('storage',function(e){if(e.key===KEY)render();});
+  render();
+  return {add:add};
+})();
+</script>
 <script>window.LIB=[{"src": "frames/over-1.jpg", "cap": "A women's netball team holding OVER bottles (current hero)", "alt": "Seven smiling women in green, white and navy sports jerseys hold up black and pink OVER water bottles on a court.", "t": "00:00", "crop": "Current hero (package hero source). Portrait 1380x1650: a 4:3 crop takes y 0.22-0.72 and keeps faces and bottles; 3:2 is tighter (y 0.28-0.70). Team not named on the site.", "flags": [], "px": "1380 x 1650"}, {"src": "frames/over-2.jpg", "cap": "A floorball team in blue kit with their OVER bottles", "alt": "A floorball team in blue jerseys sits and kneels in rows on a blue court, each player holding an OVER bottle.", "t": "00:00", "crop": "Portrait 1380x1650; 4:3 crop y 0.20-0.80 fits the team at full width. Same photo also on the site as a February post; that copy is left out.", "flags": [], "px": "1380 x 1650"}, {"src": "frames/over-3.jpg", "cap": "A women's futsal team holding up OVER bottles outdoors", "alt": "About twenty women, many in headscarves and red team shirts, crowd together under a tree holding up OVER bottles in different colours.", "t": "00:00", "crop": "Portrait; harsh midday light.", "flags": [], "px": "1380 x 1650"}, {"src": "frames/over-4.jpg", "cap": "A rugby team with medals and a row of OVER bottles", "alt": "A rugby team in navy and blue striped kit with medals poses on grass at dusk, with OVER bottles lined up in front.", "t": "00:00", "crop": "Portrait; players are small. A presentation cheque in the middle carries text.", "flags": [], "px": "1380 x 1650"}, {"src": "frames/over-5.jpg", "cap": "Athletes celebrate with a Malaysian flag and OVER bottles", "alt": "A group of young athletes in white and red kit smile and hold up gold OVER bottles behind a large Malaysian flag in a stadium.", "t": "00:00", "crop": "Portrait. Team not named on the site.", "flags": [], "px": "1380 x 1650"}, {"src": "frames/over-6.jpg", "cap": "Korfball players on an outdoor court with OVER bottles", "alt": "Five young players crouch and stand on an outdoor court with a korfball, holding pale OVER bottles.", "t": "00:00", "crop": "Portrait phone photo.", "flags": [], "px": "1380 x 1650"}, {"src": "frames/over-7.jpg", "cap": "A smiling group gathered behind a table of OVER bottles", "alt": "About fourteen smiling young people crowd behind a table of OVER bottles and tumblers in front of a 12.12 Special backdrop.", "t": "00:00", "crop": "1600x1600. The site does not say who they are; likely staff or community, confirm with the client before captioning as the OVER team. Backdrop text: 12.12 Special.", "flags": ["Text in frame"], "px": "1600 x 1600"}, {"src": "frames/over-8.jpg", "cap": "A group in a gym making peace signs", "alt": "About twelve young people, several in black OVER T-shirts, pose and make peace signs in a gym.", "t": "00:00", "crop": "1600x1600; not named on the site.", "flags": [], "px": "1600 x 1600"}, {"src": "frames/over-9.jpg", "cap": "Two models in OVER T-shirts flex for the camera", "alt": "A smiling woman and man in black OVER T-shirts flex their arms against a plain white background.", "t": "00:00", "crop": "Studio portrait, 1380x1650; clean for social. Not named.", "flags": [], "px": "1380 x 1650"}, {"src": "frames/over-10.jpg", "cap": "The OVER outlet at IOI City Mall, Putrajaya", "alt": "A round OVER kiosk in a shopping mall, lined with shelves of bottles and tumblers under an OVER sign.", "t": "00:00", "crop": "1600x1200; kiosk centred x 0.05-0.95. Location from the file name on over.my. Shows the brand's own outlets, which the profile mentions.", "flags": [], "px": "1600 x 1200"}, {"src": "frames/over-11.jpg", "cap": "An OVER outlet counter with its lit logo", "alt": "A dark blue OVER counter with a lit gold logo in a mall, with shelves of bottles and a digital screen behind.", "t": "00:00", "crop": "1600x1200; logo counter in the foreground x 0.0-0.55.", "flags": [], "px": "1600 x 1200"}, {"src": "frames/over-12.jpg", "cap": "An OVER outlet with a striped awning in a mall", "alt": "An OVER retail booth under a striped awning in a busy mall, with shelves of colourful bottles and a Brew Cup display.", "t": "00:00", "crop": "1080x810 phone photo; usable for intro only at this size.", "flags": ["Low resolution"], "px": "1080 x 810"}, {"src": "frames/over-13.jpg", "cap": "Lilac and pink OVER bottles against orange and red walls", "alt": "A lilac OVER bottle on a red surface with a hand holding a pink OVER bottle against orange and red walls.", "t": "00:00", "crop": "1600x1600 studio product shot.", "flags": [], "px": "1600 x 1600"}, {"src": "frames/over-14.jpg", "cap": "Three OVER bottles with tennis balls on artificial grass", "alt": "Turquoise, pink and black OVER bottles lie on artificial grass beside two tennis balls, seen from above.", "t": "00:00", "crop": "1380x1650; clean, no text despite the file name.", "flags": [], "px": "1380 x 1650"}, {"src": "frames/over-15.jpg", "cap": "Water pouring from a green OVER bottle on teal", "alt": "A hand tips a green OVER bottle so water pours from its flip-top spout against a teal background.", "t": "00:00", "crop": "1800x800; package middle-banner source. Subject sits left (x 0.0-0.30).", "flags": [], "px": "1800 x 800"}, {"src": "frames/over-16.jpg", "cap": "Four OVER shakers on a grass ledge against blue sky", "alt": "Green, black, pale blue and pink OVER shaker bottles stand in a row on a grass ledge under a blue sky with tennis balls.", "t": "00:00", "crop": "1380x1650 studio composite.", "flags": [], "px": "1380 x 1650"}, {"src": "frames/over-17.jpg", "cap": "Two friends in sports jerseys laughing with OVER bottles", "alt": "A woman in a cap and a man in a red jersey sit outdoors laughing, each holding a large OVER bottle.", "t": "00:00", "crop": "1380x1650. Not named.", "flags": [], "px": "1380 x 1650"}, {"src": "frames/over-18.jpg", "cap": "A woman sits on a rooftop bench with an OVER bottle", "alt": "A young woman with sunglasses on her head sits on a wooden bench on a rooftop, a grey OVER bottle beside her.", "t": "00:00", "crop": "1380x1650. Not named.", "flags": [], "px": "1380 x 1650"}, {"src": "frames/over-19.jpg", "cap": "A cyclist on a turbo trainer with an OVER bottle", "alt": "A cyclist in a helmet and team kit rests on his bike holding a large black OVER bottle.", "t": "00:00", "crop": "1800x1800. Kit carries a third-party team brand (PRPS) on the chest.", "flags": ["Third-party brand"], "px": "1800 x 1800"}, {"src": "frames/over-20.jpg", "cap": "An athlete hugs an orange OVER bottle at an indoor event", "alt": "A smiling young woman in a black team jacket hugs an orange and green OVER bottle at an indoor sports hall.", "t": "00:00", "crop": "1500x1500. Not named.", "flags": [], "px": "1500 x 1500"}, {"src": "frames/over-21.jpg", "cap": "Two Malaysian dancers celebrate with their medals", "alt": "A man and a woman in matching orange and black Malaysia tiger-stripe jackets smile and hold up medals.", "t": "00:00", "crop": "1380x1650 selfie; no bottle in shot. Not named on the site.", "flags": [], "px": "1380 x 1650"}, {"src": "frames/over-22.jpg", "cap": "A woman holds up a white OVER bottle among leaves", "alt": "A smiling woman in a black sports top holds up a large white OVER bottle against green foliage.", "t": "00:00", "crop": "1725x2063. From the influencer section of over.my; not named.", "flags": [], "px": "1725 x 2063"}, {"src": "frames/over-23.jpg", "cap": "About Us banner: sprinters beside an orange OVER bottle", "alt": "Sprinters race on a red running track on the left beside a close-up of an orange OVER bottle on the right.", "t": "00:00", "crop": "1920x650; package intro-image source. Split image, so crop to one side.", "flags": [], "px": "1920 x 650"}, {"src": "frames/over-24.jpg", "cap": "Homepage banner: a basketball player shoots, an OVER bottle on the court", "alt": "A player leaps to shoot at an outdoor basketball court at dusk while an orange OVER bottle stands on the court in the foreground.", "t": "00:00", "crop": "1920x850; player is small (x 0.13-0.20). Banner use only.", "flags": [], "px": "1920 x 850"}];</script>
 <script>
 (function(){
@@ -264,7 +331,10 @@ pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;paddin
     return '/wf_business_story '+slug+'\n'+what+'\nImage: '+src+'\n'+proc+'\nThen rebuild, run the checks and ship. Do not ask me in between.';
   }
   document.querySelectorAll('.pr').forEach(function(b){b.addEventListener('click',function(ev){ev.stopPropagation();
-    copy(prompt(b.dataset.act,b.dataset.file),'Prompt copied: paste it to Claude');});});
+    var slug=ip.dataset.slug,src='library/'+b.dataset.file,pr=ipt.checked?' Image process ON.':' Image process OFF.';
+    var t=b.dataset.act==='hero'?'Set '+src+' as the hero image.'+pr:'Use '+src+' in the article body, placed by the step 4 image method.'+pr;
+    if(window.WFPT)WFPT.add(slug,b.dataset.act==='hero'?'set as hero':'use in body',t);
+    else copy(prompt(b.dataset.act,b.dataset.file),'Prompt copied: paste it to Claude');});});
 
   document.querySelectorAll('.film .play').forEach(function(b){b.addEventListener('click',function(){
     var f=document.createElement('iframe');

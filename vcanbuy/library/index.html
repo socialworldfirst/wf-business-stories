@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB"><head>
+<html lang="en-GB" data-pt-slug="vcanbuy"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="robots" content="noindex, nofollow"/>
 <title>Vcanbuy visual library · WorldFirst</title>
@@ -177,6 +177,39 @@ pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;paddin
 @media(max-width:1100px){.grid.g3{grid-template-columns:repeat(2,1fr)}.filmrow{grid-template-columns:1fr}}
 @media(max-width:640px){.grid.g2,.grid.g3{grid-template-columns:1fr}.lb{grid-template-columns:40px 1fr 40px}.lb>button{font-size:30px;padding:6px}}
 
+
+.pt-btn{position:fixed;left:24px;bottom:43px;z-index:10001;all:unset;position:fixed;left:24px;bottom:43px;z-index:10001;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 16px 0 12px;border-radius:999px;background:#fff;border:1.5px solid #E6E8EB;box-shadow:0 6px 24px rgba(31,35,35,.12);font:600 15px Poppins,sans-serif;color:#1F2323;cursor:pointer}
+.pt-btn:hover{border-color:#FF0051}
+.pt-btn:focus-visible{outline:2px solid #FF0051;outline-offset:3px}
+.pt-ic{width:26px;height:26px;border-radius:7px;background:#FF0051;color:#fff;display:grid;place-items:center;font-size:14px}
+.pt-n{font-size:12px;color:#69727D;background:#F2F3F5;border-radius:999px;padding:4px 8px;font-variant-numeric:tabular-nums}
+.pt-btn.has .pt-n{background:#FF0051;color:#fff}
+.pt{position:fixed;inset:0;z-index:10005;font-family:Poppins,sans-serif}
+.pt[hidden]{display:none}
+.pt-bg{position:absolute;inset:0;background:rgba(31,35,35,.45)}
+.pt-sh{position:absolute;top:0;left:0;bottom:0;width:min(460px,100vw);background:#fff;display:flex;flex-direction:column;gap:10px;padding:18px 20px;overflow:auto}
+.pt-hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pt-hd b{font-size:17px;color:#1F2323}
+.pt-sub{font-size:12px;color:#69727D}
+.pt .pt-x{all:unset;margin-left:auto;cursor:pointer;font-size:28px;line-height:1;color:#69727D}
+.pt-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.pt-list li{position:relative;border:1.5px solid #E6E8EB;border-radius:12px;padding:10px 34px 10px 12px;font-size:13px;line-height:1.5;color:#1F2323;white-space:pre-wrap;word-break:break-word}
+.pt-list li small{display:block;font-size:11px;font-weight:600;color:#FF0051;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.pt .pt-del{all:unset;position:absolute;top:6px;right:10px;cursor:pointer;font-size:20px;color:#9AA1A1}
+.pt-empty{font-size:13px;color:#69727D;margin:0}
+.pt-l{font-size:13px;font-weight:600;color:#1F2323;margin-top:6px}
+.pt textarea{font:14px Poppins,sans-serif;border:1.5px solid #E6E8EB;border-radius:10px;padding:10px;resize:vertical}
+.pt textarea:focus{outline:none;border-color:#FF0051}
+.pt-row{display:flex}
+.pt-ft{display:flex;gap:8px;margin-top:auto;padding-top:8px}
+.pt .pt-add,.pt .pt-copy,.pt .pt-clear{all:unset;cursor:pointer;text-align:center;font-size:14px;font-weight:600;border-radius:999px;padding:9px 16px}
+.pt .pt-copy{background:#FF0051;color:#fff;flex:1}
+.pt .pt-add,.pt .pt-clear{border:1.5px solid #FF0051;color:#FF0051}
+.pt-ok{font-size:12.5px;color:#137333;min-height:16px;margin:0}
+.pt-toast{position:fixed;left:24px;bottom:100px;z-index:10006;background:#1F2323;color:#fff;font:13px Poppins,sans-serif;padding:9px 16px;border-radius:999px;opacity:0;transition:opacity .2s;pointer-events:none}
+.pt-toast.on{opacity:1}
+@media(max-width:767px){.pt-btn{left:16px;bottom:51px;height:44px;font-size:14px}}
+
 </style>
 </head>
 <body>
@@ -232,6 +265,40 @@ pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;paddin
   <button type="button" class="ln" aria-label="Next frame">&#8250;</button>
 </div>
 <div class="toast" role="status" aria-live="polite"></div>
+<button type="button" class="pt-btn" aria-haspopup="dialog" aria-label="Open the prompt tray"><span class="pt-ic" aria-hidden="true">&#10003;</span><span>Prompts</span><span class="pt-n">0</span></button><div class="pt" hidden><div class="pt-bg"></div><div class="pt-sh" role="dialog" aria-modal="true" aria-label="Prompt tray"><div class="pt-hd"><b>Prompt tray</b><span class="pt-sub">Saved on this device across every case page</span><button type="button" class="pt-x" aria-label="Close">&times;</button></div><ol class="pt-list"></ol><p class="pt-empty">Nothing yet. Click a body image, or use Set as hero / Use in body in a visual library.</p><label class="pt-l" for="pt-note">Add a note for this page</label><textarea id="pt-note" rows="2" placeholder="Anything else to change on this page"></textarea><div class="pt-row"><button type="button" class="pt-add">Add note</button></div><div class="pt-ft"><button type="button" class="pt-copy">Copy all as one prompt</button><button type="button" class="pt-clear">Clear</button></div><p class="pt-ok" aria-live="polite"></p></div></div><div class="pt-toast" aria-live="polite"></div>
+<script>
+window.WFPT=(function(){
+  var KEY='wf-prompt-tray',slug=document.documentElement.getAttribute('data-pt-slug')||'';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a));}catch(e){}render();}
+  var btn=document.querySelector('.pt-btn'),p=document.querySelector('.pt'),list=p.querySelector('.pt-list'),
+      empty=p.querySelector('.pt-empty'),n=btn.querySelector('.pt-n'),ok=p.querySelector('.pt-ok'),
+      toast=document.querySelector('.pt-toast'),tt,last=null;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){var a=load();n.textContent=a.length;btn.classList.toggle('has',a.length>0);empty.hidden=a.length>0;
+    list.innerHTML=a.map(function(x,i){return '<li><small>'+esc(x.c)+' · '+esc(x.k)+'</small>'+esc(x.t)+
+      '<button type="button" class="pt-del" data-i="'+i+'" aria-label="Remove this prompt">&times;</button></li>';}).join('');}
+  function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on');},1800);}
+  function add(c,k,t){var a=load();a.push({c:c||slug,k:k,t:t,at:Date.now()});save(a);say('Added to prompts ('+a.length+')');}
+  list.addEventListener('click',function(e){var b=e.target.closest('.pt-del');if(!b)return;var a=load();a.splice(+b.dataset.i,1);save(a);});
+  function open(){render();ok.textContent='';p.hidden=false;last=document.activeElement;p.querySelector('.pt-x').focus();}
+  function shut(){p.hidden=true;if(last)last.focus();}
+  btn.addEventListener('click',open);p.querySelector('.pt-x').addEventListener('click',shut);p.querySelector('.pt-bg').addEventListener('click',shut);
+  document.addEventListener('keydown',function(e){if(!p.hidden&&e.key==='Escape')shut();});
+  p.querySelector('.pt-add').addEventListener('click',function(){var ta=p.querySelector('textarea'),v=ta.value.trim();
+    if(!v){ok.textContent='Write a note first';ta.focus();return;}add(slug,'note',v);ta.value='';});
+  function fb(t){var x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');}catch(e){}x.remove();}
+  p.querySelector('.pt-copy').addEventListener('click',function(){var a=load();if(!a.length){ok.textContent='Nothing to copy yet';return;}
+    var t='/wf_business_story\nWork through these '+a.length+' review prompts from the case pages. For each, change the page, rebuild, run the checks and ship. Image process ON means clean the image in ChatGPT first (remove captions, logos and marks, keep everything else), then use it. Do not ask me in between.\n\n'+
+      a.map(function(x,i){return (i+1)+'. ['+x.c+'] '+x.t;}).join('\n\n');
+    function done(){ok.textContent='Copied '+a.length+' prompts: paste them to Claude. Clear the tray once sent.';}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,function(){fb(t);done();});}else{fb(t);done();}});
+  p.querySelector('.pt-clear').addEventListener('click',function(){save([]);ok.textContent='Tray cleared';});
+  window.addEventListener('storage',function(e){if(e.key===KEY)render();});
+  render();
+  return {add:add};
+})();
+</script>
 <script>window.LIB=[{"src": "frames/vcanbuy-web-1.jpg", "cap": "Unloading a truck of sacks and crates in the Vcanbuy warehouse", "alt": "Workers stand on a truck stacked with green sacks and wooden crates inside a tall orange-framed warehouse, while a presenter in a Vcanbuy polo stands in front of parcels.", "t": "00:00", "crop": "Warehouse fills the frame; presenter x 0.44-0.56, y 0.50-1.0 (move off-centre with a 4:3 crop x 0.0-0.75 or x 0.25-1.0). Frame grab from the first frame of the video, no caption on it. The presenter is not named.", "flags": [], "px": "1456 x 819"}, {"src": "frames/vcanbuy-web-2.jpg", "cap": "Forklift moving a pallet of cartons", "alt": "A forklift driver carries a pallet of cartons across a warehouse floor with orange steel frames and racking behind.", "t": "00:00", "crop": "Forklift and pallet x 0.25-0.72, y 0.05-0.95. Slight motion blur. No caption on this frame.", "flags": ["Soft focus"], "px": "1456 x 819"}, {"src": "frames/vcanbuy-web-3.jpg", "cap": "Vcanbuy delivery staff unloading a parcel at a customer's shop", "alt": "A man in an orange and white Vcanbuy polo lifts a carton off a delivery truck in front of a shop with red lanterns overhead.", "t": "00:00", "crop": "Man x 0.18-0.47, y 0.03-1.0; carton foreground left. No caption on this frame (captions start a few frames later).", "flags": [], "px": "1456 x 819"}, {"src": "frames/vcanbuy-web-4.jpg", "cap": "Unloading a shipping container of goods from China", "alt": "Workers unload sacks from a blue shipping container on a trailer inside a warehouse, while a presenter speaks to camera in front.", "t": "00:00", "crop": "Container and workers x 0.33-0.90, y 0.0-0.70; presenter x 0.35-0.63. Shipping line name on the container (x 0.78-0.84, y 0.18-0.36).", "flags": ["Third-party brand"], "px": "1456 x 819"}, {"src": "frames/vcanbuy-web-5.jpg", "cap": "Wooden crates and wrapped cartons waiting in the warehouse", "alt": "Wooden shipping crates marked with Chinese characters and order numbers sit beside a shrink-wrapped pallet of cartons in the warehouse.", "t": "00:00", "crop": "Crates x 0.22-0.80, y 0.15-1.0. Handwritten marks and order numbers on the crates; no people.", "flags": [], "px": "1456 x 819"}, {"src": "frames/vcanbuy-web-6.jpg", "cap": "Checking a list among sacks of incoming goods", "alt": "A presenter in a white shirt reads from papers among green and yellow sacks of goods in the warehouse.", "t": "00:00", "crop": "Presenter x 0.36-0.66, y 0.13-1.0. The presenter is not named.", "flags": [], "px": "1456 x 819"}, {"src": "frames/vcanbuy-web-7.jpg", "cap": "Warehouse racking with a forklift in the foreground", "alt": "A presenter speaks to camera in a warehouse aisle with blue and orange racking, stacked cartons and a yellow forklift.", "t": "00:00", "crop": "Presenter x 0.38-0.62; forklift brand x 0.70-0.95, y 0.75-0.85. The presenter is not named.", "flags": ["Third-party brand"], "px": "1456 x 819"}, {"src": "frames/vcanbuy-web-8.jpg", "cap": "Vcanbuy staff at a training session", "alt": "Two photos side by side of Vcanbuy staff seated at long tables in a meeting room, smiling at the camera.", "t": "00:00", "crop": "Collage of two photos (split at x 0.30), 960 x 350. Right panel x 0.30-1.0 is the stronger one.", "flags": ["Low resolution"], "px": "960 x 350"}, {"src": "frames/vcanbuy-web-9.jpg", "cap": "Team-building day outdoors", "alt": "Two photos side by side of Vcanbuy staff in white T-shirts playing a rope game on grass.", "t": "00:00", "crop": "Collage of two photos (split at x 0.50), 960 x 350. Faces small.", "flags": ["Low resolution"], "px": "960 x 350"}, {"src": "frames/vcanbuy-web-10.jpg", "cap": "Vcanbuy recruitment and trade-fair booths", "alt": "A grid of photos of Vcanbuy staff at orange-branded booths at job and trade fairs.", "t": "00:00", "crop": "Collage of eight small photos; one fair banner carries Thai text. Use only as reference.", "flags": ["Low resolution", "Text in frame"], "px": "960 x 350"}];</script>
 <script>
 (function(){
@@ -264,7 +331,10 @@ pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;paddin
     return '/wf_business_story '+slug+'\n'+what+'\nImage: '+src+'\n'+proc+'\nThen rebuild, run the checks and ship. Do not ask me in between.';
   }
   document.querySelectorAll('.pr').forEach(function(b){b.addEventListener('click',function(ev){ev.stopPropagation();
-    copy(prompt(b.dataset.act,b.dataset.file),'Prompt copied: paste it to Claude');});});
+    var slug=ip.dataset.slug,src='library/'+b.dataset.file,pr=ipt.checked?' Image process ON.':' Image process OFF.';
+    var t=b.dataset.act==='hero'?'Set '+src+' as the hero image.'+pr:'Use '+src+' in the article body, placed by the step 4 image method.'+pr;
+    if(window.WFPT)WFPT.add(slug,b.dataset.act==='hero'?'set as hero':'use in body',t);
+    else copy(prompt(b.dataset.act,b.dataset.file),'Prompt copied: paste it to Claude');});});
 
   document.querySelectorAll('.film .play').forEach(function(b){b.addEventListener('click',function(){
     var f=document.createElement('iframe');

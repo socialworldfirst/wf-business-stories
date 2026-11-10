@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB"><head>
+<html lang="en-GB" data-pt-slug="keababies"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="robots" content="noindex, nofollow"/>
 <title>KeaBabies visual library · WorldFirst</title>
@@ -177,6 +177,39 @@ pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;paddin
 @media(max-width:1100px){.grid.g3{grid-template-columns:repeat(2,1fr)}.filmrow{grid-template-columns:1fr}}
 @media(max-width:640px){.grid.g2,.grid.g3{grid-template-columns:1fr}.lb{grid-template-columns:40px 1fr 40px}.lb>button{font-size:30px;padding:6px}}
 
+
+.pt-btn{position:fixed;left:24px;bottom:43px;z-index:10001;all:unset;position:fixed;left:24px;bottom:43px;z-index:10001;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 16px 0 12px;border-radius:999px;background:#fff;border:1.5px solid #E6E8EB;box-shadow:0 6px 24px rgba(31,35,35,.12);font:600 15px Poppins,sans-serif;color:#1F2323;cursor:pointer}
+.pt-btn:hover{border-color:#FF0051}
+.pt-btn:focus-visible{outline:2px solid #FF0051;outline-offset:3px}
+.pt-ic{width:26px;height:26px;border-radius:7px;background:#FF0051;color:#fff;display:grid;place-items:center;font-size:14px}
+.pt-n{font-size:12px;color:#69727D;background:#F2F3F5;border-radius:999px;padding:4px 8px;font-variant-numeric:tabular-nums}
+.pt-btn.has .pt-n{background:#FF0051;color:#fff}
+.pt{position:fixed;inset:0;z-index:10005;font-family:Poppins,sans-serif}
+.pt[hidden]{display:none}
+.pt-bg{position:absolute;inset:0;background:rgba(31,35,35,.45)}
+.pt-sh{position:absolute;top:0;left:0;bottom:0;width:min(460px,100vw);background:#fff;display:flex;flex-direction:column;gap:10px;padding:18px 20px;overflow:auto}
+.pt-hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pt-hd b{font-size:17px;color:#1F2323}
+.pt-sub{font-size:12px;color:#69727D}
+.pt .pt-x{all:unset;margin-left:auto;cursor:pointer;font-size:28px;line-height:1;color:#69727D}
+.pt-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.pt-list li{position:relative;border:1.5px solid #E6E8EB;border-radius:12px;padding:10px 34px 10px 12px;font-size:13px;line-height:1.5;color:#1F2323;white-space:pre-wrap;word-break:break-word}
+.pt-list li small{display:block;font-size:11px;font-weight:600;color:#FF0051;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.pt .pt-del{all:unset;position:absolute;top:6px;right:10px;cursor:pointer;font-size:20px;color:#9AA1A1}
+.pt-empty{font-size:13px;color:#69727D;margin:0}
+.pt-l{font-size:13px;font-weight:600;color:#1F2323;margin-top:6px}
+.pt textarea{font:14px Poppins,sans-serif;border:1.5px solid #E6E8EB;border-radius:10px;padding:10px;resize:vertical}
+.pt textarea:focus{outline:none;border-color:#FF0051}
+.pt-row{display:flex}
+.pt-ft{display:flex;gap:8px;margin-top:auto;padding-top:8px}
+.pt .pt-add,.pt .pt-copy,.pt .pt-clear{all:unset;cursor:pointer;text-align:center;font-size:14px;font-weight:600;border-radius:999px;padding:9px 16px}
+.pt .pt-copy{background:#FF0051;color:#fff;flex:1}
+.pt .pt-add,.pt .pt-clear{border:1.5px solid #FF0051;color:#FF0051}
+.pt-ok{font-size:12.5px;color:#137333;min-height:16px;margin:0}
+.pt-toast{position:fixed;left:24px;bottom:100px;z-index:10006;background:#1F2323;color:#fff;font:13px Poppins,sans-serif;padding:9px 16px;border-radius:999px;opacity:0;transition:opacity .2s;pointer-events:none}
+.pt-toast.on{opacity:1}
+@media(max-width:767px){.pt-btn{left:16px;bottom:51px;height:44px;font-size:14px}}
+
 </style>
 </head>
 <body>
@@ -232,6 +265,40 @@ pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;paddin
   <button type="button" class="ln" aria-label="Next frame">&#8250;</button>
 </div>
 <div class="toast" role="status" aria-live="polite"></div>
+<button type="button" class="pt-btn" aria-haspopup="dialog" aria-label="Open the prompt tray"><span class="pt-ic" aria-hidden="true">&#10003;</span><span>Prompts</span><span class="pt-n">0</span></button><div class="pt" hidden><div class="pt-bg"></div><div class="pt-sh" role="dialog" aria-modal="true" aria-label="Prompt tray"><div class="pt-hd"><b>Prompt tray</b><span class="pt-sub">Saved on this device across every case page</span><button type="button" class="pt-x" aria-label="Close">&times;</button></div><ol class="pt-list"></ol><p class="pt-empty">Nothing yet. Click a body image, or use Set as hero / Use in body in a visual library.</p><label class="pt-l" for="pt-note">Add a note for this page</label><textarea id="pt-note" rows="2" placeholder="Anything else to change on this page"></textarea><div class="pt-row"><button type="button" class="pt-add">Add note</button></div><div class="pt-ft"><button type="button" class="pt-copy">Copy all as one prompt</button><button type="button" class="pt-clear">Clear</button></div><p class="pt-ok" aria-live="polite"></p></div></div><div class="pt-toast" aria-live="polite"></div>
+<script>
+window.WFPT=(function(){
+  var KEY='wf-prompt-tray',slug=document.documentElement.getAttribute('data-pt-slug')||'';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a));}catch(e){}render();}
+  var btn=document.querySelector('.pt-btn'),p=document.querySelector('.pt'),list=p.querySelector('.pt-list'),
+      empty=p.querySelector('.pt-empty'),n=btn.querySelector('.pt-n'),ok=p.querySelector('.pt-ok'),
+      toast=document.querySelector('.pt-toast'),tt,last=null;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){var a=load();n.textContent=a.length;btn.classList.toggle('has',a.length>0);empty.hidden=a.length>0;
+    list.innerHTML=a.map(function(x,i){return '<li><small>'+esc(x.c)+' · '+esc(x.k)+'</small>'+esc(x.t)+
+      '<button type="button" class="pt-del" data-i="'+i+'" aria-label="Remove this prompt">&times;</button></li>';}).join('');}
+  function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on');},1800);}
+  function add(c,k,t){var a=load();a.push({c:c||slug,k:k,t:t,at:Date.now()});save(a);say('Added to prompts ('+a.length+')');}
+  list.addEventListener('click',function(e){var b=e.target.closest('.pt-del');if(!b)return;var a=load();a.splice(+b.dataset.i,1);save(a);});
+  function open(){render();ok.textContent='';p.hidden=false;last=document.activeElement;p.querySelector('.pt-x').focus();}
+  function shut(){p.hidden=true;if(last)last.focus();}
+  btn.addEventListener('click',open);p.querySelector('.pt-x').addEventListener('click',shut);p.querySelector('.pt-bg').addEventListener('click',shut);
+  document.addEventListener('keydown',function(e){if(!p.hidden&&e.key==='Escape')shut();});
+  p.querySelector('.pt-add').addEventListener('click',function(){var ta=p.querySelector('textarea'),v=ta.value.trim();
+    if(!v){ok.textContent='Write a note first';ta.focus();return;}add(slug,'note',v);ta.value='';});
+  function fb(t){var x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');}catch(e){}x.remove();}
+  p.querySelector('.pt-copy').addEventListener('click',function(){var a=load();if(!a.length){ok.textContent='Nothing to copy yet';return;}
+    var t='/wf_business_story\nWork through these '+a.length+' review prompts from the case pages. For each, change the page, rebuild, run the checks and ship. Image process ON means clean the image in ChatGPT first (remove captions, logos and marks, keep everything else), then use it. Do not ask me in between.\n\n'+
+      a.map(function(x,i){return (i+1)+'. ['+x.c+'] '+x.t;}).join('\n\n');
+    function done(){ok.textContent='Copied '+a.length+' prompts: paste them to Claude. Clear the tray once sent.';}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,function(){fb(t);done();});}else{fb(t);done();}});
+  p.querySelector('.pt-clear').addEventListener('click',function(){save([]);ok.textContent='Tray cleared';});
+  window.addEventListener('storage',function(e){if(e.key===KEY)render();});
+  render();
+  return {add:add};
+})();
+</script>
 <script>window.LIB=[{"src": "frames/keababies-1.jpg", "cap": "Founders Jane Neo and Ivan Ong with their two sons on a sofa (current hero)", "alt": "Jane Neo and Ivan Ong, founders of KeaBabies, sit on a sofa in white T-shirts with their two young sons, each boy holding a green plush chick toy.", "t": "00:00", "crop": "Current hero. Family sits x 0.40-1.0 of a wide 2880x1100 banner with an empty cream left side; 4:3 crop x 0.42-1.0 is about 1450 px wide. Web-served copy; print original not held.", "flags": ["Children: needs client permission"], "px": "2880 x 1100"}, {"src": "frames/keababies-2.jpg", "cap": "Ivan Ong and Jane Neo checking KeaBabies product boxes in their warehouse", "alt": "KeaBabies founders Ivan Ong and Jane Neo stand by warehouse shelving looking at boxes of KeaBabies crib sheets.", "t": "00:00", "crop": "Best business photo in the set but only 844x604, below the 906 px hero minimum. The page intro (812x349) is cropped from it. Ask the client for the original.", "flags": ["Low resolution"], "px": "844 x 604"}, {"src": "frames/keababies-3.jpg", "cap": "Jane and Ivan with their sons on a beach at sunset", "alt": "A smiling couple stands on a beach at sunset with their two young sons in front of them.", "t": "00:00", "crop": "700x800 with rounded corners baked in. On the About Us page beside 'Hey, we're Jane & Ivan!'.", "flags": ["Children: needs client permission", "Low resolution"], "px": "700 x 800"}, {"src": "frames/keababies-4.jpg", "cap": "A mother carries her baby in a sage KeaBabies wrap", "alt": "A smiling woman wears a sage green KeaBabies baby wrap carrier with a baby held against her chest in a bright room.", "t": "00:00", "crop": "1622x960 homepage banner; subject x 0.30-0.55. Model, not a named person.", "flags": ["Children: needs client permission"], "px": "1622 x 960"}, {"src": "frames/keababies-5.jpg", "cap": "A mother and baby resting together on a bed", "alt": "A woman lies on a bed kissing a baby wrapped in a soft blue blanket.", "t": "00:00", "crop": "1281x700 homepage banner; models.", "flags": ["Children: needs client permission"], "px": "1281 x 700"}, {"src": "frames/keababies-6.jpg", "cap": "A fan of pastel KeaBabies bibs on a wooden tray", "alt": "Pastel KeaBabies bibs in blue, cream, green and pink fanned out on a woven wooden tray.", "t": "00:00", "crop": "1622x960 homepage banner; clean.", "flags": [], "px": "1622 x 960"}, {"src": "frames/keababies-7.jpg", "cap": "A KeaBabies toddler pillow with an animal print", "alt": "Close-up of a white toddler pillow printed with grey animals and a KeaBabies label, lying on a beige sheet.", "t": "00:00", "crop": "1622x960 homepage banner.", "flags": [], "px": "1622 x 960"}, {"src": "frames/keababies-8.jpg", "cap": "A crawling baby wearing a mustard KeaBabies bandana bib", "alt": "A laughing baby in a mustard bandana bib crawls across a wooden floor towards the camera.", "t": "00:00", "crop": "1622x960 homepage banner; model.", "flags": ["Children: needs client permission"], "px": "1622 x 960"}, {"src": "frames/keababies-9.jpg", "cap": "A toddler in a KeaBabies panda top laughs with a pink balloon", "alt": "A laughing toddler in a black and white panda top holds the string of a pink balloon against a white wall with a line drawing.", "t": "00:00", "crop": "1536x900 from the WorldFirst SG page; model.", "flags": ["Children: needs client permission"], "px": "1536 x 900"}, {"src": "frames/keababies-10.jpg", "cap": "KeaBabies wooden baby hairbrush set and box", "alt": "A KeaBabies walnut baby hairbrush, comb and soft brush beside their illustrated box on white.", "t": "00:00", "crop": "2000x2000 Amazon-style main image on white.", "flags": [], "px": "2000 x 2000"}, {"src": "frames/keababies-11.jpg", "cap": "KeaBabies diaper backpack, open to show bottle pockets", "alt": "A black KeaBabies diaper backpack with its front open, showing three insulated bottle pockets and a wipes pouch.", "t": "00:00", "crop": "2500x2500 main image on white.", "flags": [], "px": "2500 x 2500"}, {"src": "frames/keababies-12.jpg", "cap": "KeaBabies silicone suction plates with lids", "alt": "Three KeaBabies divided silicone plates in green, cream and slate blue with clear lids, beside their kraft box.", "t": "00:00", "crop": "2500x2500 main image on white.", "flags": [], "px": "2500 x 2500"}, {"src": "frames/keababies-13.jpg", "cap": "KeaBabies deluxe baby washcloths in white", "alt": "A stack of folded white KeaBabies washcloths beside a kraft box labelled Baby Washcloths.", "t": "00:00", "crop": "2500x2500 main image on white.", "flags": [], "px": "2500 x 2500"}, {"src": "frames/keababies-14.jpg", "cap": "Eight KeaBabies bandana bibs in plain colours", "alt": "Eight KeaBabies bandana bibs in white, navy, sage, olive, grey, rust and black laid out in rows on white.", "t": "00:00", "crop": "2000x2001 main image on white.", "flags": [], "px": "2000 x 2001"}];</script>
 <script>
 (function(){
@@ -264,7 +331,10 @@ pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;paddin
     return '/wf_business_story '+slug+'\n'+what+'\nImage: '+src+'\n'+proc+'\nThen rebuild, run the checks and ship. Do not ask me in between.';
   }
   document.querySelectorAll('.pr').forEach(function(b){b.addEventListener('click',function(ev){ev.stopPropagation();
-    copy(prompt(b.dataset.act,b.dataset.file),'Prompt copied: paste it to Claude');});});
+    var slug=ip.dataset.slug,src='library/'+b.dataset.file,pr=ipt.checked?' Image process ON.':' Image process OFF.';
+    var t=b.dataset.act==='hero'?'Set '+src+' as the hero image.'+pr:'Use '+src+' in the article body, placed by the step 4 image method.'+pr;
+    if(window.WFPT)WFPT.add(slug,b.dataset.act==='hero'?'set as hero':'use in body',t);
+    else copy(prompt(b.dataset.act,b.dataset.file),'Prompt copied: paste it to Claude');});});
 
   document.querySelectorAll('.film .play').forEach(function(b){b.addEventListener('click',function(){
     var f=document.createElement('iframe');

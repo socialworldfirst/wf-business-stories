@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-SG" style="--rpx: 1.33px; --vw: 19.2px; --vh: 10.8px; --nav-height: 80px; --content-height: 1000px;"><head><meta content="noindex,nofollow" name="robots"/>
+<html data-pt-slug="keababies" lang="en-SG" style="--rpx: 1.33px; --vw: 19.2px; --vh: 10.8px; --nav-height: 80px; --content-height: 1000px;"><head><meta content="noindex,nofollow" name="robots"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="noindex, nofollow" name="robots"/>
@@ -407,7 +407,7 @@ font-size: 14px !important;
 .wfbs-libp{position:fixed;inset:0;z-index:10002}
 .wfbs-libp[hidden]{display:none}
 .wfbs-libp__bg{position:absolute;inset:0;background:rgba(31,35,35,.5)}
-.wfbs-libp__sh{position:absolute;top:0;right:0;bottom:0;width:min(1200px,100vw);background:#fff;display:flex;flex-direction:column}
+.wfbs-libp__sh{position:absolute;top:0;right:0;bottom:0;width:min(100vw,max(50vw,560px));background:#fff;display:flex;flex-direction:column}
 .wfbs-libp__bar{display:flex;align-items:center;gap:16px;height:56px;padding:0 12px 0 24px;border-bottom:1px solid #E6E8EB;font:600 15px Poppins,sans-serif;color:#1F2323}
 .wfbs-libp__bar a{margin-left:auto;font:500 13.5px Poppins,sans-serif;color:#FF0051!important;text-decoration:none!important}
 .wfbs-libp .wfbs-libp__bar button{all:unset;background:none!important;border:0!important;box-shadow:none!important;cursor:pointer;font-size:30px;line-height:1;padding:4px 10px;color:#1F2323}
@@ -434,6 +434,38 @@ font-size: 14px !important;
 .wfbs-im textarea:focus{outline:none;border-color:#FF0051}
 .wfbs-im__ok{font-size:12.5px;color:#137333;min-height:16px;margin:0}
 @media(max-width:767px){.wfbs-film__icon{width:60px;height:60px}.wfbs-lib{right:100px;bottom:51px;height:44px;font-size:14px;padding:0 12px 0 9px;gap:8px}.wfbs-libp__bar{padding-left:16px}}
+
+.pt-btn{position:fixed;left:24px;bottom:43px;z-index:10001;all:unset;position:fixed;left:24px;bottom:43px;z-index:10001;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 16px 0 12px;border-radius:999px;background:#fff;border:1.5px solid #E6E8EB;box-shadow:0 6px 24px rgba(31,35,35,.12);font:600 15px Poppins,sans-serif;color:#1F2323;cursor:pointer}
+.pt-btn:hover{border-color:#FF0051}
+.pt-btn:focus-visible{outline:2px solid #FF0051;outline-offset:3px}
+.pt-ic{width:26px;height:26px;border-radius:7px;background:#FF0051;color:#fff;display:grid;place-items:center;font-size:14px}
+.pt-n{font-size:12px;color:#69727D;background:#F2F3F5;border-radius:999px;padding:4px 8px;font-variant-numeric:tabular-nums}
+.pt-btn.has .pt-n{background:#FF0051;color:#fff}
+.pt{position:fixed;inset:0;z-index:10005;font-family:Poppins,sans-serif}
+.pt[hidden]{display:none}
+.pt-bg{position:absolute;inset:0;background:rgba(31,35,35,.45)}
+.pt-sh{position:absolute;top:0;left:0;bottom:0;width:min(460px,100vw);background:#fff;display:flex;flex-direction:column;gap:10px;padding:18px 20px;overflow:auto}
+.pt-hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pt-hd b{font-size:17px;color:#1F2323}
+.pt-sub{font-size:12px;color:#69727D}
+.pt .pt-x{all:unset;margin-left:auto;cursor:pointer;font-size:28px;line-height:1;color:#69727D}
+.pt-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.pt-list li{position:relative;border:1.5px solid #E6E8EB;border-radius:12px;padding:10px 34px 10px 12px;font-size:13px;line-height:1.5;color:#1F2323;white-space:pre-wrap;word-break:break-word}
+.pt-list li small{display:block;font-size:11px;font-weight:600;color:#FF0051;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.pt .pt-del{all:unset;position:absolute;top:6px;right:10px;cursor:pointer;font-size:20px;color:#9AA1A1}
+.pt-empty{font-size:13px;color:#69727D;margin:0}
+.pt-l{font-size:13px;font-weight:600;color:#1F2323;margin-top:6px}
+.pt textarea{font:14px Poppins,sans-serif;border:1.5px solid #E6E8EB;border-radius:10px;padding:10px;resize:vertical}
+.pt textarea:focus{outline:none;border-color:#FF0051}
+.pt-row{display:flex}
+.pt-ft{display:flex;gap:8px;margin-top:auto;padding-top:8px}
+.pt .pt-add,.pt .pt-copy,.pt .pt-clear{all:unset;cursor:pointer;text-align:center;font-size:14px;font-weight:600;border-radius:999px;padding:9px 16px}
+.pt .pt-copy{background:#FF0051;color:#fff;flex:1}
+.pt .pt-add,.pt .pt-clear{border:1.5px solid #FF0051;color:#FF0051}
+.pt-ok{font-size:12.5px;color:#137333;min-height:16px;margin:0}
+.pt-toast{position:fixed;left:24px;bottom:100px;z-index:10006;background:#1F2323;color:#fff;font:13px Poppins,sans-serif;padding:9px 16px;border-radius:999px;opacity:0;transition:opacity .2s;pointer-events:none}
+.pt-toast.on{opacity:1}
+@media(max-width:767px){.pt-btn{left:16px;bottom:51px;height:44px;font-size:14px}}
 </style></head>
 <body class="wp-singular page-template-default page page-id-60761 wp-custom-logo wp-theme-hello-elementor wp-child-theme-wfrow-child elementor-default elementor-kit-5 elementor-page elementor-page-60761 e--ua-blink e--ua-mac e--ua-webkit" data-elementor-device-mode="desktop"><div class="go3670563033" id="hs-web-interactives-top-push-anchor"></div>
 <!-- Google Tag Manager (noscript) -->
@@ -3032,7 +3064,39 @@ font-size: 14px !important;
 <div class="go2417249464 go3967842156" id="hs-web-interactives-floating-bottom-right-anchor">
 </div>
 </div>
-<div id="across_adn_container" style="display:none"><div id="across_adn3_wrap_80498186595" style="display:none"></div></div><script id="wfbs-mirror-sticky">(function(){var c=document.querySelectorAll('[data-settings*=sticky_parent]');if(!c.length)return;var mq=matchMedia('(min-width:1025px)');function f(){c.forEach(function(e){var t=e.parentElement.getBoundingClientRect().top;e.classList.toggle('wfbs-stuck',mq.matches&&t<0)})}addEventListener('scroll',f,{passive:true});addEventListener('resize',f);f()})();</script><a aria-haspopup="dialog" class="wfbs-lib" data-id="wfbs-library" href="library/index.html"><span aria-hidden="true" class="wfbs-lib__ic"><svg height="14" viewbox="0 0 16 16" width="14"><rect fill="#fff" height="6" rx="1.5" width="6" x="1" y="1"></rect><rect fill="#fff" height="6" rx="1.5" width="6" x="9" y="1"></rect><rect fill="#fff" height="6" rx="1.5" width="6" x="1" y="9"></rect><rect fill="#fff" height="6" rx="1.5" width="6" x="9" y="9"></rect></svg></span><span class="wfbs-lib__t">Visual library</span><span class="wfbs-lib__n">14</span></a><div class="wfbs-libp" data-id="wfbs-library" hidden=""><div class="wfbs-libp__bg"></div><div aria-label="KeaBabies visual library" aria-modal="true" class="wfbs-libp__sh" role="dialog"><div class="wfbs-libp__bar"><span>KeaBabies visual library</span><a href="library/index.html" rel="noopener" target="_blank">Open in a new tab</a><button aria-label="Close the visual library" type="button">×</button></div><div class="wfbs-libp__ld" role="status">Loading the visual library</div><iframe title="KeaBabies visual library"></iframe></div></div><div class="wfbs-im" data-slug="keababies" hidden=""><div class="wfbs-im__bg"></div><div aria-label="Image feedback" aria-modal="true" class="wfbs-im__box" role="dialog"><div class="wfbs-im__hd"><b>This image</b><button aria-label="Close" class="wfbs-im__x" type="button">×</button></div><p class="wfbs-im__f"></p><button class="wfbs-im__rm" type="button">Remove this image</button><label class="wfbs-im__l" for="wfbs-im-note">Or add a note</label><textarea id="wfbs-im-note" placeholder="e.g. too dark, crop tighter on the founders, swap for a warehouse photo" rows="3"></textarea><button class="wfbs-im__nt" type="button">Copy note prompt</button><p aria-live="polite" class="wfbs-im__ok"></p></div></div><script>(function(){
+<div id="across_adn_container" style="display:none"><div id="across_adn3_wrap_80498186595" style="display:none"></div></div><script id="wfbs-mirror-sticky">(function(){var c=document.querySelectorAll('[data-settings*=sticky_parent]');if(!c.length)return;var mq=matchMedia('(min-width:1025px)');function f(){c.forEach(function(e){var t=e.parentElement.getBoundingClientRect().top;e.classList.toggle('wfbs-stuck',mq.matches&&t<0)})}addEventListener('scroll',f,{passive:true});addEventListener('resize',f);f()})();</script><a aria-haspopup="dialog" class="wfbs-lib" data-id="wfbs-library" href="library/index.html"><span aria-hidden="true" class="wfbs-lib__ic"><svg height="14" viewbox="0 0 16 16" width="14"><rect fill="#fff" height="6" rx="1.5" width="6" x="1" y="1"></rect><rect fill="#fff" height="6" rx="1.5" width="6" x="9" y="1"></rect><rect fill="#fff" height="6" rx="1.5" width="6" x="1" y="9"></rect><rect fill="#fff" height="6" rx="1.5" width="6" x="9" y="9"></rect></svg></span><span class="wfbs-lib__t">Visual library</span><span class="wfbs-lib__n">14</span></a><div class="wfbs-libp" data-id="wfbs-library" hidden=""><div class="wfbs-libp__bg"></div><div aria-label="KeaBabies visual library" aria-modal="true" class="wfbs-libp__sh" role="dialog"><div class="wfbs-libp__bar"><span>KeaBabies visual library</span><a href="library/index.html" rel="noopener" target="_blank">Open in a new tab</a><button aria-label="Close the visual library" type="button">×</button></div><div class="wfbs-libp__ld" role="status">Loading the visual library</div><iframe title="KeaBabies visual library"></iframe></div></div><div class="wfbs-im" data-slug="keababies" hidden=""><div class="wfbs-im__bg"></div><div aria-label="Image feedback" aria-modal="true" class="wfbs-im__box" role="dialog"><div class="wfbs-im__hd"><b>This image</b><button aria-label="Close" class="wfbs-im__x" type="button">×</button></div><p class="wfbs-im__f"></p><button class="wfbs-im__rm" type="button">Remove this image</button><label class="wfbs-im__l" for="wfbs-im-note">Or add a note</label><textarea id="wfbs-im-note" placeholder="e.g. too dark, crop tighter on the founders, swap for a warehouse photo" rows="3"></textarea><button class="wfbs-im__nt" type="button">Add note to prompts</button><p aria-live="polite" class="wfbs-im__ok"></p></div></div><button aria-haspopup="dialog" aria-label="Open the prompt tray" class="pt-btn" type="button"><span aria-hidden="true" class="pt-ic">✓</span><span>Prompts</span><span class="pt-n">0</span></button><div class="pt" hidden=""><div class="pt-bg"></div><div aria-label="Prompt tray" aria-modal="true" class="pt-sh" role="dialog"><div class="pt-hd"><b>Prompt tray</b><span class="pt-sub">Saved on this device across every case page</span><button aria-label="Close" class="pt-x" type="button">×</button></div><ol class="pt-list"></ol><p class="pt-empty">Nothing yet. Click a body image, or use Set as hero / Use in body in a visual library.</p><label class="pt-l" for="pt-note">Add a note for this page</label><textarea id="pt-note" placeholder="Anything else to change on this page" rows="2"></textarea><div class="pt-row"><button class="pt-add" type="button">Add note</button></div><div class="pt-ft"><button class="pt-copy" type="button">Copy all as one prompt</button><button class="pt-clear" type="button">Clear</button></div><p aria-live="polite" class="pt-ok"></p></div></div><div aria-live="polite" class="pt-toast"></div><script>
+window.WFPT=(function(){
+  var KEY='wf-prompt-tray',slug=document.documentElement.getAttribute('data-pt-slug')||'';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a));}catch(e){}render();}
+  var btn=document.querySelector('.pt-btn'),p=document.querySelector('.pt'),list=p.querySelector('.pt-list'),
+      empty=p.querySelector('.pt-empty'),n=btn.querySelector('.pt-n'),ok=p.querySelector('.pt-ok'),
+      toast=document.querySelector('.pt-toast'),tt,last=null;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){var a=load();n.textContent=a.length;btn.classList.toggle('has',a.length>0);empty.hidden=a.length>0;
+    list.innerHTML=a.map(function(x,i){return '<li><small>'+esc(x.c)+' · '+esc(x.k)+'</small>'+esc(x.t)+
+      '<button type="button" class="pt-del" data-i="'+i+'" aria-label="Remove this prompt">&times;</button></li>';}).join('');}
+  function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on');},1800);}
+  function add(c,k,t){var a=load();a.push({c:c||slug,k:k,t:t,at:Date.now()});save(a);say('Added to prompts ('+a.length+')');}
+  list.addEventListener('click',function(e){var b=e.target.closest('.pt-del');if(!b)return;var a=load();a.splice(+b.dataset.i,1);save(a);});
+  function open(){render();ok.textContent='';p.hidden=false;last=document.activeElement;p.querySelector('.pt-x').focus();}
+  function shut(){p.hidden=true;if(last)last.focus();}
+  btn.addEventListener('click',open);p.querySelector('.pt-x').addEventListener('click',shut);p.querySelector('.pt-bg').addEventListener('click',shut);
+  document.addEventListener('keydown',function(e){if(!p.hidden&&e.key==='Escape')shut();});
+  p.querySelector('.pt-add').addEventListener('click',function(){var ta=p.querySelector('textarea'),v=ta.value.trim();
+    if(!v){ok.textContent='Write a note first';ta.focus();return;}add(slug,'note',v);ta.value='';});
+  function fb(t){var x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');}catch(e){}x.remove();}
+  p.querySelector('.pt-copy').addEventListener('click',function(){var a=load();if(!a.length){ok.textContent='Nothing to copy yet';return;}
+    var t='/wf_business_story\nWork through these '+a.length+' review prompts from the case pages. For each, change the page, rebuild, run the checks and ship. Image process ON means clean the image in ChatGPT first (remove captions, logos and marks, keep everything else), then use it. Do not ask me in between.\n\n'+
+      a.map(function(x,i){return (i+1)+'. ['+x.c+'] '+x.t;}).join('\n\n');
+    function done(){ok.textContent='Copied '+a.length+' prompts: paste them to Claude. Clear the tray once sent.';}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,function(){fb(t);done();});}else{fb(t);done();}});
+  p.querySelector('.pt-clear').addEventListener('click',function(){save([]);ok.textContent='Tray cleared';});
+  window.addEventListener('storage',function(e){if(e.key===KEY)render();});
+  render();
+  return {add:add};
+})();
+</script><script>(function(){
   document.querySelectorAll('.wfbs-film__play').forEach(function(b){b.addEventListener('click',function(){
     if(b.dataset.video){var v=document.createElement('video');v.src=b.dataset.video;v.controls=true;v.autoplay=true;v.playsInline=true;
       v.setAttribute('aria-label',b.getAttribute('aria-label'));b.replaceWith(v);return;}
@@ -3053,11 +3117,12 @@ font-size: 14px !important;
         f.textContent=im.dataset.fbImg.replace(/_/g,' ')+' · '+im.dataset.fbSrc;ta.value='';ok.textContent='';m.hidden=false;ta.focus();});});
     m.querySelector('.wfbs-im__x').addEventListener('click',shut);m.querySelector('.wfbs-im__bg').addEventListener('click',shut);
     document.addEventListener('keydown',function(ev){if(!m.hidden&&ev.key==='Escape')shut();});
+    function put(k,t){if(window.WFPT){WFPT.add(m.dataset.slug,k,t);shut();}else copy(head()+t+tail(),'Prompt copied: paste it to Claude');}
     m.querySelector('.wfbs-im__rm').addEventListener('click',function(){
-      copy(head()+'Remove the '+cur.dataset.fbImg.replace(/_/g,' ')+' image ('+cur.dataset.fbSrc+') from the page.'+tail(),'Prompt copied: paste it to Claude');});
+      put('remove image','Remove the '+cur.dataset.fbImg.replace(/_/g,' ')+' image ('+cur.dataset.fbSrc+') from the page.');});
     m.querySelector('.wfbs-im__nt').addEventListener('click',function(){
       if(!ta.value.trim()){ok.textContent='Write a note first';ta.focus();return;}
-      copy(head()+'About the '+cur.dataset.fbImg.replace(/_/g,' ')+' image ('+cur.dataset.fbSrc+'): '+ta.value.trim()+tail(),'Prompt copied: paste it to Claude');});
+      put('image note','About the '+cur.dataset.fbImg.replace(/_/g,' ')+' image ('+cur.dataset.fbSrc+'): '+ta.value.trim());});
   })();
   var a=document.querySelector('.wfbs-lib'),p=document.querySelector('.wfbs-libp');
   if(!a||!p)return;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB"><head>
+<html lang="en-GB" data-pt-slug="fresh4u"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="robots" content="noindex, nofollow"/>
 <title>Fresh4U visual library · WorldFirst</title>
@@ -177,6 +177,39 @@ pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;paddin
 @media(max-width:1100px){.grid.g3{grid-template-columns:repeat(2,1fr)}.filmrow{grid-template-columns:1fr}}
 @media(max-width:640px){.grid.g2,.grid.g3{grid-template-columns:1fr}.lb{grid-template-columns:40px 1fr 40px}.lb>button{font-size:30px;padding:6px}}
 
+
+.pt-btn{position:fixed;left:24px;bottom:43px;z-index:10001;all:unset;position:fixed;left:24px;bottom:43px;z-index:10001;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 16px 0 12px;border-radius:999px;background:#fff;border:1.5px solid #E6E8EB;box-shadow:0 6px 24px rgba(31,35,35,.12);font:600 15px Poppins,sans-serif;color:#1F2323;cursor:pointer}
+.pt-btn:hover{border-color:#FF0051}
+.pt-btn:focus-visible{outline:2px solid #FF0051;outline-offset:3px}
+.pt-ic{width:26px;height:26px;border-radius:7px;background:#FF0051;color:#fff;display:grid;place-items:center;font-size:14px}
+.pt-n{font-size:12px;color:#69727D;background:#F2F3F5;border-radius:999px;padding:4px 8px;font-variant-numeric:tabular-nums}
+.pt-btn.has .pt-n{background:#FF0051;color:#fff}
+.pt{position:fixed;inset:0;z-index:10005;font-family:Poppins,sans-serif}
+.pt[hidden]{display:none}
+.pt-bg{position:absolute;inset:0;background:rgba(31,35,35,.45)}
+.pt-sh{position:absolute;top:0;left:0;bottom:0;width:min(460px,100vw);background:#fff;display:flex;flex-direction:column;gap:10px;padding:18px 20px;overflow:auto}
+.pt-hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pt-hd b{font-size:17px;color:#1F2323}
+.pt-sub{font-size:12px;color:#69727D}
+.pt .pt-x{all:unset;margin-left:auto;cursor:pointer;font-size:28px;line-height:1;color:#69727D}
+.pt-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.pt-list li{position:relative;border:1.5px solid #E6E8EB;border-radius:12px;padding:10px 34px 10px 12px;font-size:13px;line-height:1.5;color:#1F2323;white-space:pre-wrap;word-break:break-word}
+.pt-list li small{display:block;font-size:11px;font-weight:600;color:#FF0051;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.pt .pt-del{all:unset;position:absolute;top:6px;right:10px;cursor:pointer;font-size:20px;color:#9AA1A1}
+.pt-empty{font-size:13px;color:#69727D;margin:0}
+.pt-l{font-size:13px;font-weight:600;color:#1F2323;margin-top:6px}
+.pt textarea{font:14px Poppins,sans-serif;border:1.5px solid #E6E8EB;border-radius:10px;padding:10px;resize:vertical}
+.pt textarea:focus{outline:none;border-color:#FF0051}
+.pt-row{display:flex}
+.pt-ft{display:flex;gap:8px;margin-top:auto;padding-top:8px}
+.pt .pt-add,.pt .pt-copy,.pt .pt-clear{all:unset;cursor:pointer;text-align:center;font-size:14px;font-weight:600;border-radius:999px;padding:9px 16px}
+.pt .pt-copy{background:#FF0051;color:#fff;flex:1}
+.pt .pt-add,.pt .pt-clear{border:1.5px solid #FF0051;color:#FF0051}
+.pt-ok{font-size:12.5px;color:#137333;min-height:16px;margin:0}
+.pt-toast{position:fixed;left:24px;bottom:100px;z-index:10006;background:#1F2323;color:#fff;font:13px Poppins,sans-serif;padding:9px 16px;border-radius:999px;opacity:0;transition:opacity .2s;pointer-events:none}
+.pt-toast.on{opacity:1}
+@media(max-width:767px){.pt-btn{left:16px;bottom:51px;height:44px;font-size:14px}}
+
 </style>
 </head>
 <body>
@@ -232,6 +265,40 @@ pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;paddin
   <button type="button" class="ln" aria-label="Next frame">&#8250;</button>
 </div>
 <div class="toast" role="status" aria-live="polite"></div>
+<button type="button" class="pt-btn" aria-haspopup="dialog" aria-label="Open the prompt tray"><span class="pt-ic" aria-hidden="true">&#10003;</span><span>Prompts</span><span class="pt-n">0</span></button><div class="pt" hidden><div class="pt-bg"></div><div class="pt-sh" role="dialog" aria-modal="true" aria-label="Prompt tray"><div class="pt-hd"><b>Prompt tray</b><span class="pt-sub">Saved on this device across every case page</span><button type="button" class="pt-x" aria-label="Close">&times;</button></div><ol class="pt-list"></ol><p class="pt-empty">Nothing yet. Click a body image, or use Set as hero / Use in body in a visual library.</p><label class="pt-l" for="pt-note">Add a note for this page</label><textarea id="pt-note" rows="2" placeholder="Anything else to change on this page"></textarea><div class="pt-row"><button type="button" class="pt-add">Add note</button></div><div class="pt-ft"><button type="button" class="pt-copy">Copy all as one prompt</button><button type="button" class="pt-clear">Clear</button></div><p class="pt-ok" aria-live="polite"></p></div></div><div class="pt-toast" aria-live="polite"></div>
+<script>
+window.WFPT=(function(){
+  var KEY='wf-prompt-tray',slug=document.documentElement.getAttribute('data-pt-slug')||'';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a));}catch(e){}render();}
+  var btn=document.querySelector('.pt-btn'),p=document.querySelector('.pt'),list=p.querySelector('.pt-list'),
+      empty=p.querySelector('.pt-empty'),n=btn.querySelector('.pt-n'),ok=p.querySelector('.pt-ok'),
+      toast=document.querySelector('.pt-toast'),tt,last=null;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){var a=load();n.textContent=a.length;btn.classList.toggle('has',a.length>0);empty.hidden=a.length>0;
+    list.innerHTML=a.map(function(x,i){return '<li><small>'+esc(x.c)+' · '+esc(x.k)+'</small>'+esc(x.t)+
+      '<button type="button" class="pt-del" data-i="'+i+'" aria-label="Remove this prompt">&times;</button></li>';}).join('');}
+  function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on');},1800);}
+  function add(c,k,t){var a=load();a.push({c:c||slug,k:k,t:t,at:Date.now()});save(a);say('Added to prompts ('+a.length+')');}
+  list.addEventListener('click',function(e){var b=e.target.closest('.pt-del');if(!b)return;var a=load();a.splice(+b.dataset.i,1);save(a);});
+  function open(){render();ok.textContent='';p.hidden=false;last=document.activeElement;p.querySelector('.pt-x').focus();}
+  function shut(){p.hidden=true;if(last)last.focus();}
+  btn.addEventListener('click',open);p.querySelector('.pt-x').addEventListener('click',shut);p.querySelector('.pt-bg').addEventListener('click',shut);
+  document.addEventListener('keydown',function(e){if(!p.hidden&&e.key==='Escape')shut();});
+  p.querySelector('.pt-add').addEventListener('click',function(){var ta=p.querySelector('textarea'),v=ta.value.trim();
+    if(!v){ok.textContent='Write a note first';ta.focus();return;}add(slug,'note',v);ta.value='';});
+  function fb(t){var x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');}catch(e){}x.remove();}
+  p.querySelector('.pt-copy').addEventListener('click',function(){var a=load();if(!a.length){ok.textContent='Nothing to copy yet';return;}
+    var t='/wf_business_story\nWork through these '+a.length+' review prompts from the case pages. For each, change the page, rebuild, run the checks and ship. Image process ON means clean the image in ChatGPT first (remove captions, logos and marks, keep everything else), then use it. Do not ask me in between.\n\n'+
+      a.map(function(x,i){return (i+1)+'. ['+x.c+'] '+x.t;}).join('\n\n');
+    function done(){ok.textContent='Copied '+a.length+' prompts: paste them to Claude. Clear the tray once sent.';}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,function(){fb(t);done();});}else{fb(t);done();}});
+  p.querySelector('.pt-clear').addEventListener('click',function(){save([]);ok.textContent='Tray cleared';});
+  window.addEventListener('storage',function(e){if(e.key===KEY)render();});
+  render();
+  return {add:add};
+})();
+</script>
 <script>window.LIB=[{"src": "frames/fresh4u-1.jpg", "cap": "The Fresh4U team in hi-vis jackets in front of the market unit", "alt": "About 25 Fresh4U staff in navy and hi-vis yellow jackets pose in two rows in front of a wholesale market unit with a Fresh4U Produce sign.", "t": "00:00", "crop": "Group fills x 0.0-1.0, y 0.25-0.95; 4:3 and 3:2 crops keep the whole team, the Fresh4U sign sits top right (y 0.0-0.12) and is lost in a tight 4:3. Other traders' boxes in the background.", "flags": [], "px": "2560 x 1707"}, {"src": "frames/fresh4u-2.jpg", "cap": "Danial Paisawala (left) with a colleague at the Fresh4U unit (the current hero)", "alt": "Two men in navy and hi-vis Fresh4U jackets stand smiling in front of stacked produce boxes at a wholesale market unit.", "t": "00:00", "crop": "Current page hero. Subjects x 0.25-0.75; 4:3 crop x 0.12-0.88. Danial named by the package README (matched to his founder portrait); the colleague is not named. Third-party produce brands on boxes in the background.", "flags": [], "px": "2560 x 1681"}, {"src": "frames/fresh4u-3.jpg", "cap": "The Fresh4U unit with produce laid out in front", "alt": "A wholesale market unit under a long Fresh4U Produce sign, with crates of fruit and vegetables laid out and staff in hi-vis jackets.", "t": "00:00", "crop": "Package intro image. Wide; sign runs across y 0.0-0.15. 1143x491 crop y 0.15-0.80 keeps the produce and staff.", "flags": [], "px": "2560 x 1519"}, {"src": "frames/fresh4u-4.jpg", "cap": "A box of fine beans in Fresh4U packaging, Produce of Rwanda", "alt": "An open cardboard box of green fine beans in front of a Fresh4U Fine Beans display box, with stacked green Fresh4U boxes marked Produce of Rwanda.", "t": "00:00", "crop": "Portrait. Package middle banner source; banner crop y 0.35-0.75 keeps the beans.", "flags": [], "px": "2120 x 2560"}, {"src": "frames/fresh4u-5.jpg", "cap": "A Fresh4U team member holds a crate of leafy greens", "alt": "A man in a navy and hi-vis Fresh4U jacket holds a white crate of leafy greens in a market aisle, the background softly blurred.", "t": "00:00", "crop": "Subject x 0.55-0.95; 4:3 crop x 0.30-1.0 keeps him and the crate. Not named.", "flags": [], "px": "2560 x 1707"}, {"src": "frames/fresh4u-6.jpg", "cap": "A Fresh4U team member smells a long purple aubergine", "alt": "A smiling man in a navy and hi-vis Fresh4U jacket holds a long purple aubergine to his nose in front of stacked produce boxes.", "t": "00:00", "crop": "Face x 0.45-0.75; 1:1 crop x 0.30-1.0. Third-party produce brand on boxes behind.", "flags": ["Third-party brand"], "px": "2560 x 1887"}, {"src": "frames/fresh4u-7.jpg", "cap": "A Fresh4U team member shows a box of aubergines", "alt": "A man in a navy and hi-vis Fresh4U jacket holds up an open box of glossy aubergines in a warehouse lined with stacked boxes.", "t": "00:00", "crop": "Subject x 0.30-0.85; 4:3 crop x 0.15-0.90. Third-party grower brand on the box he holds.", "flags": ["Third-party brand"], "px": "2560 x 1707"}, {"src": "frames/fresh4u-8.jpg", "cap": "Staff picking stock between pallets of produce boxes", "alt": "Two warehouse staff, one in a turban and hi-vis jacket, handle produce boxes among tall stacks of cartons and red crates.", "t": "00:00", "crop": "Third-party produce brands on the cartons throughout; keep crops tight on the people (x 0.10-0.75).", "flags": ["Third-party brand"], "px": "2560 x 1676"}, {"src": "frames/fresh4u-9.jpg", "cap": "Moving a pallet of produce with a pallet truck", "alt": "A worker in a hi-vis vest pulls an orange pallet truck loaded with boxes of produce through a busy market warehouse.", "t": "00:00", "crop": "Third-party brand names on the boxes on the pallet (x 0.0-0.45).", "flags": ["Third-party brand"], "px": "2560 x 1557"}, {"src": "frames/fresh4u-10.jpg", "cap": "A forklift lifts a pallet in the warehouse", "alt": "An orange forklift raises a pallet of stacked green produce boxes inside a high-ceilinged warehouse.", "t": "00:00", "crop": "Portrait. Works full frame for 4:5 and 9:16.", "flags": [], "px": "1637 x 2560"}, {"src": "frames/fresh4u-11.jpg", "cap": "A Fresh4U team member at a desk in the office", "alt": "An older man with glasses and a grey beard, in a navy and hi-vis Fresh4U jacket, works at a desk beside a printer.", "t": "00:00", "crop": "Face x 0.25-0.50; foreground counter blurs the lower third. Not named.", "flags": [], "px": "2560 x 1707"}, {"src": "frames/fresh4u-12.jpg", "cap": "Boxes of dragon fruit, mangoes and other exotic fruit", "alt": "Close view of open boxes of dragon fruit, netted fruit and packaged produce in green, red and white branded cartons.", "t": "00:00", "crop": "Grower and importer brands on every carton; use as texture only.", "flags": ["Third-party brand"], "px": "2560 x 1707"}, {"src": "frames/fresh4u-13.jpg", "cap": "Inside the Fresh4U unit: an aisle stacked with fruit and vegetables", "alt": "A long aisle inside a market unit stacked high with boxes of fruit and vegetables under a Fresh4U Produce sign.", "t": "00:00", "crop": "Portrait phone photo, 1200x1600. Third-party produce brands on boxes.", "flags": ["Third-party brand"], "px": "1200 x 1600"}, {"src": "frames/fresh4u-14.jpg", "cap": "Fresh4U staff lined up along the produce at the unit", "alt": "A row of Fresh4U staff in dark jackets with hi-vis stripes stand beside crates of vegetables in a market unit.", "t": "00:00", "crop": "1600x1200 phone photo; team x 0.45-0.98. Too small for a sharp hero.", "flags": ["Third-party brand"], "px": "1600 x 1200"}, {"src": "frames/fresh4u-15.jpg", "cap": "The Fresh4U team on its stand at Fruit Logistica Berlin 2024", "alt": "Six men in white Fresh4U shirts stand in a row on a trade fair stand under a purple Fresh4U Produce banner, with a wooden Fresh4U counter in front.", "t": "00:00", "crop": "People are small (y 0.45-0.85); 3:2 crop keeps the banner and team. Event named on fresh4u.co.uk (Fruit Logistica Berlin 2024 post). Poster text on the stand walls.", "flags": [], "px": "2560 x 1920"}, {"src": "frames/fresh4u-16.jpg", "cap": "Fresh4U team members with a certificate at the Berlin stand", "alt": "Four men, three in white Fresh4U shirts and one in a grey jacket, stand on a trade fair stand, one holding a framed certificate.", "t": "00:00", "crop": "Not named. Stand posters carry text (240+ products, open 24/7).", "flags": [], "px": "2560 x 1920"}, {"src": "frames/fresh4u-17.jpg", "cap": "A Fresh4U team member with a crate of durian at the trade fair", "alt": "A man in a white Fresh4U shirt stands behind a wooden crate piled with spiky green durian at a trade fair stand.", "t": "00:00", "crop": "Subject x 0.25-0.60. Stand posters behind carry text.", "flags": [], "px": "2560 x 1920"}, {"src": "frames/fresh4u-18.jpg", "cap": "A meeting with visitors at the Fresh4U stand", "alt": "Two men in white Fresh4U shirts sit at a round table with two visitors on a trade fair stand.", "t": "00:00", "crop": "Visitors are not Fresh4U staff and are identifiable; clear before public use.", "flags": [], "px": "2560 x 1920"}, {"src": "frames/fresh4u-19.jpg", "cap": "Fresh4U team and a guest at the stand counter", "alt": "Four men, three in white Fresh4U shirts, stand at a wooden Fresh4U counter on a trade fair stand with a screen showing apples behind.", "t": "00:00", "crop": "Guest in the dark suit is not identified.", "flags": [], "px": "2560 x 1920"}, {"src": "frames/fresh4u-20.jpg", "cap": "Fresh4U team on a trade show stand", "alt": "Seven people, several in navy and hi-vis Fresh4U jackets, stand together in front of a wood-panelled Fresh4U stand.", "t": "00:00", "crop": "Portrait. Neighbouring exhibitor sign at the right edge.", "flags": ["Third-party brand"], "px": "1240 x 2000"}, {"src": "frames/fresh4u-21.jpg", "cap": "Fresh4U team on a purple and white trade show stand", "alt": "Four people in white shirts stand behind a counter printed with green peas on a purple and white Fresh4U stand.", "t": "00:00", "crop": "1600x1200; stand graphics carry text.", "flags": [], "px": "1600 x 1200"}, {"src": "frames/fresh4u-22.jpg", "cap": "The Fresh4U stand at a trade show, wide view", "alt": "A wood-panelled Fresh4U trade show stand with produce displays and a few visitors in an exhibition hall.", "t": "00:00", "crop": "1600x1200; people are small. Establishing shot only.", "flags": [], "px": "1600 x 1200"}, {"src": "frames/fresh4u-23.jpg", "cap": "Group photo from the Fresh4U careers page", "alt": "About twenty people stand in a row on a lawn in front of a hedge and a white building.", "t": "00:00", "crop": "From the careers page; the site does not say who they are or where. Check with the client before use.", "flags": [], "px": "2560 x 1707"}, {"src": "frames/fresh4u-24.jpg", "cap": "Fakhruddin (Danial) Paisawala, CEO, Fresh4U", "alt": "Danial Paisawala, CEO of Fresh4U, in a blue blazer and white shirt, smiling, on a white background.", "t": "00:00", "crop": "481x477 cut-out on white. Face x 0.33-0.58, y 0.10-0.40; 1:1 headshot crop x 0.25-0.65, y 0.02-0.42 gives about 190 px. Named on fresh4u.co.uk/about-us.", "flags": ["Low resolution"], "px": "481 x 477"}, {"src": "frames/fresh4u-25.jpg", "cap": "Hatim Raja, Sourcing and Sales Director, Fresh4U", "alt": "Hatim Raja of Fresh4U in a blue shirt, smiling, on a grey background.", "t": "00:00", "crop": "540x540. Named on fresh4u.co.uk/about-us. Not quoted on the page.", "flags": ["Low resolution"], "px": "540 x 540"}];</script>
 <script>
 (function(){
@@ -264,7 +331,10 @@ pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;paddin
     return '/wf_business_story '+slug+'\n'+what+'\nImage: '+src+'\n'+proc+'\nThen rebuild, run the checks and ship. Do not ask me in between.';
   }
   document.querySelectorAll('.pr').forEach(function(b){b.addEventListener('click',function(ev){ev.stopPropagation();
-    copy(prompt(b.dataset.act,b.dataset.file),'Prompt copied: paste it to Claude');});});
+    var slug=ip.dataset.slug,src='library/'+b.dataset.file,pr=ipt.checked?' Image process ON.':' Image process OFF.';
+    var t=b.dataset.act==='hero'?'Set '+src+' as the hero image.'+pr:'Use '+src+' in the article body, placed by the step 4 image method.'+pr;
+    if(window.WFPT)WFPT.add(slug,b.dataset.act==='hero'?'set as hero':'use in body',t);
+    else copy(prompt(b.dataset.act,b.dataset.file),'Prompt copied: paste it to Claude');});});
 
   document.querySelectorAll('.film .play').forEach(function(b){b.addEventListener('click',function(){
     var f=document.createElement('iframe');
