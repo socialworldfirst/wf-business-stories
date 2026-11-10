@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB" data-pt-slug="wiltec-de"><head>
+<html lang="en-GB" class="pt-lib" data-pt-slug="wiltec-de"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="robots" content="noindex, nofollow"/>
 <title>Wiltec visual library · WorldFirst</title>
@@ -178,12 +178,13 @@ pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;paddin
 @media(max-width:640px){.grid.g2,.grid.g3{grid-template-columns:1fr}.lb{grid-template-columns:40px 1fr 40px}.lb>button{font-size:30px;padding:6px}}
 
 
-.pt-btn{position:fixed;left:24px;bottom:43px;z-index:10001;all:unset;position:fixed;left:24px;bottom:43px;z-index:10001;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 16px 0 12px;border-radius:999px;background:#fff;border:1.5px solid #E6E8EB;box-shadow:0 6px 24px rgba(31,35,35,.12);font:600 15px Poppins,sans-serif;color:#1F2323;cursor:pointer}
-.pt-btn:hover{border-color:#FF0051}
-.pt-btn:focus-visible{outline:2px solid #FF0051;outline-offset:3px}
-.pt-ic{width:26px;height:26px;border-radius:7px;background:#FF0051;color:#fff;display:grid;place-items:center;font-size:14px}
-.pt-n{font-size:12px;color:#69727D;background:#F2F3F5;border-radius:999px;padding:4px 8px;font-variant-numeric:tabular-nums}
-.pt-btn.has .pt-n{background:#FF0051;color:#fff}
+html body button.pt-btn{all:unset;position:fixed!important;right:106px!important;left:auto!important;bottom:103px!important;z-index:10001!important;display:inline-flex!important;align-items:center!important;gap:10px!important;height:48px!important;width:auto!important;padding:0 16px 0 12px!important;margin:0!important;border-radius:999px!important;background:#fff!important;border:1px solid #E6E8EB!important;box-shadow:0 6px 24px rgba(31,35,35,.16)!important;font:500 15px/1 Poppins,sans-serif!important;color:#1F2323!important;cursor:pointer;text-transform:none!important;letter-spacing:0!important}
+html body button.pt-btn:hover{border-color:#FF0051!important;background:#fff!important;color:#1F2323!important}
+html body button.pt-btn:focus-visible{outline:2px solid #FF0051;outline-offset:3px}
+html body .pt-ic{width:26px;height:26px;border-radius:7px;background:#FF0051;color:#fff;display:grid;place-items:center;font-size:14px}
+html body .pt-n{font-size:12px;color:#69727D;background:#F2F3F5;border-radius:999px;padding:4px 8px;font-variant-numeric:tabular-nums}
+html body button.pt-btn.has .pt-n{background:#FF0051;color:#fff}
+html.pt-lib body button.pt-btn{right:24px!important;bottom:24px!important}
 .pt{position:fixed;inset:0;z-index:10005;font-family:Poppins,sans-serif}
 .pt[hidden]{display:none}
 .pt-bg{position:absolute;inset:0;background:rgba(31,35,35,.45)}
@@ -208,7 +209,7 @@ pre{font-family:'Poppins';font-size:13.5px;color:#3a3f44;line-height:1.85;paddin
 .pt-ok{font-size:12.5px;color:#137333;min-height:16px;margin:0}
 .pt-toast{position:fixed;left:24px;bottom:100px;z-index:10006;background:#1F2323;color:#fff;font:13px Poppins,sans-serif;padding:9px 16px;border-radius:999px;opacity:0;transition:opacity .2s;pointer-events:none}
 .pt-toast.on{opacity:1}
-@media(max-width:767px){.pt-btn{left:16px;bottom:51px;height:44px;font-size:14px}}
+@media(max-width:767px){html body button.pt-btn{right:100px!important;bottom:107px!important;height:44px!important;font-size:14px!important}html.pt-lib body button.pt-btn{right:16px!important;bottom:16px!important}}
 
 </style>
 </head>
