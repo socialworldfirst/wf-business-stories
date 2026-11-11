@@ -1,0 +1,54 @@
+== annabella-patisserie
+PASS with warnings: Annabella Patisserie
+== cheekyglo
+PASS with warnings: CheekyGlo
+== dreamcore
+BUILD REFUSED:
+  - intro: assets/intro_source_844x604.png gives a 844 px wide crop for the 1143 px article slot, so it shows pixelated. Use the original or a larger photo (the visual library has them).
+== fresh4u
+PASS with warnings: Fresh4U
+== keababies
+PASS with warnings: KeaBabies
+== lico-lico-benchmark
+PASS with warnings: LICO LICO
+== lico-lico
+PASS with warnings: LICO LICO
+== limmys
+PASS: Limmys
+== mayer
+BUILD REFUSED:
+  - capabilities: one right-block row name per product (same order, same icons)
+== nook-theory
+PASS with warnings: Nook Theory
+== osg
+BUILD REFUSED:
+  - intro: assets/intro.png gives a 794 px wide crop for the 1143 px article slot, so it shows pixelated. Use the original or a larger photo (the visual library has them).
+== over
+PASS with warnings: OVER
+== oz-hair-and-beauty
+PASS with warnings: Oz Hair and Beauty
+== poizon-live-check
+BUILD REFUSED:
+  - labels.industry: 'Fashion & Apparel' is not a website taxonomy label (renamed: use 'Fashion & Beauty'). Allowed: ['Fashion & Beauty', 'Home & Lifestyle', 'Food & Beverage', 'Health & Wellness', 'Industrial & Logistics', 'Technology', 'Gaming & Entertainment', 'Travel & Hospitality', 'Freelancers', 'Financial & Business Services', 'Marketplaces & Platforms', 'Others']
+== prism-plus
+PASS with warnings: PRISM+
+== rarewaves
+PASS with warnings: Rarewaves
+== vcanbuy
+PASS with warnings: Vcanbuy
+== webridge
+PASS with warnings: WeBridge
+== wiltec-de
+PASS with warnings: Wiltec
+== zyla-designlibro-wf
+PASS with warnings: Designlibro
+== zyla-designlibro
+PASS with warnings: Designlibro
+== zyla-noviland-wf
+PASS: Noviland
+== zyla-noviland
+PASS: Noviland
+== zyla-sharper-edge-wf
+PASS with warnings: Sharper Edge
+== zyla-sharper-edge
+PASS: Sharper Edge
